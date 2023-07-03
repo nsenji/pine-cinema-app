@@ -3,7 +3,7 @@
    <application
         android:label="pine"
         android:name="${applicationName}"
-        android:icon="@mipmap/pine logo_png">
+        android:icon="@mipmap/pine_logo">
         <activity
             android:name=".MainActivity"
             android:exported="true"

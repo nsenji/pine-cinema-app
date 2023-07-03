@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pine/utils/custom_theme.dart';
 
 import 'app_pages/Widgets_show.dart';
 
@@ -12,8 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      
+      title: 'Pine Cinema',
+      theme: lightThemeData(context),
+        darkTheme: darkThemeData(context),
+        themeMode: ThemeMode.light,
+        debugShowCheckedModeBanner: false,
       home: const MyWidget(),
     );
   }
