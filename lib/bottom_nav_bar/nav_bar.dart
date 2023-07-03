@@ -42,7 +42,7 @@ class _NavBarState extends State<NavBar> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: theme.primaryColor,
-          unselectedItemColor: theme.disabledColor,
+          // unselectedItemColor: theme.disabledColor,
           selectedIconTheme: IconThemeData(color: theme.primaryColor),
           unselectedIconTheme: IconThemeData(color: theme.disabledColor),
           items: [

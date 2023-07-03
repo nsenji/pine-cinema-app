@@ -20,9 +20,9 @@ ColorScheme lightThemeColors(context) {
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData(
     primaryColor: const Color(0xFFEF5B6B),
-    disabledColor: Color.fromARGB(255, 221, 218, 218),
+    disabledColor: Color(0xFFF4D4C4C),
     useMaterial3: true,
-    dialogBackgroundColor: const Color(0xFFFFFFFF),
+    dialogBackgroundColor:Color(0xFFECEAEA),
     cardColor: const Color(0xFFFFFFFF),
     fontFamily: Constants.appFontlight.fontFamily,
     scaffoldBackgroundColor: lightThemeColors(context).background,
@@ -82,7 +82,7 @@ appBarThemedark(context) {
 TextTheme textThemelight(context) {
   return TextTheme(
     bodyLarge: Constants.appFontlight
-        .copyWith(fontWeight: FontWeight.bold, fontSize: 24),
+        .copyWith(fontWeight: FontWeight.bold, fontSize: 15),
     bodyMedium: Constants.appFontlight
         .copyWith(fontWeight: FontWeight.normal, fontSize: 15),
     bodySmall: Constants.appFontlight.copyWith(
@@ -92,9 +92,9 @@ TextTheme textThemelight(context) {
     labelLarge: Constants.appFontlight.copyWith(
         fontWeight: FontWeight.bold, fontSize: 17, color: Colors.white),
     labelMedium: Constants.appFontlight.copyWith(
-        fontWeight: FontWeight.normal, fontSize: 15, color: Colors.white),
+        fontWeight: FontWeight.normal, fontSize: 13, color: Colors.white),
     labelSmall: Constants.appFontlight.copyWith(
-        fontWeight: FontWeight.normal, fontSize: 15, color: Color(0xFF4D4C4C)),
+        fontWeight: FontWeight.normal, fontSize: 13, color: Color(0xFF4D4C4C)),
     displaySmall: Constants.appFontdark.copyWith(
         fontWeight: FontWeight.normal, fontSize: 14, color: Color(0xFF4D4C4C)),
   );
@@ -103,7 +103,7 @@ TextTheme textThemelight(context) {
 TextTheme textThemedark(context) {
   return TextTheme(
     bodyLarge: Constants.appFontdark
-        .copyWith(fontWeight: FontWeight.bold, fontSize: 24),
+        .copyWith(fontWeight: FontWeight.bold, fontSize: 17),
     bodyMedium: Constants.appFontdark
         .copyWith(fontWeight: FontWeight.normal, fontSize: 15),
     bodySmall: Constants.appFontdark.copyWith(

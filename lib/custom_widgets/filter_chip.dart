@@ -20,7 +20,7 @@ class _ChipFilterState extends State<ChipFilter> {
     return FilterChip(
       padding: EdgeInsets.only(top: 6,bottom: 6),
       labelStyle: isSelected ? theme.textTheme.labelMedium:theme.textTheme.labelSmall,
-      backgroundColor: theme.disabledColor,
+      backgroundColor: theme.dialogBackgroundColor,
       selectedColor: theme.primaryColor,
       selected: isSelected,
       label: Text(widget.label),
