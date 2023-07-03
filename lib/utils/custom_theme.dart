@@ -95,6 +95,8 @@ TextTheme textThemelight(context) {
         fontWeight: FontWeight.normal, fontSize: 15, color: Colors.white),
     labelSmall: Constants.appFontlight.copyWith(
         fontWeight: FontWeight.normal, fontSize: 15, color: Color(0xFF4D4C4C)),
+    displaySmall: Constants.appFontdark.copyWith(
+        fontWeight: FontWeight.normal, fontSize: 14, color: Color(0xFF4D4C4C)),
   );
 }
 
@@ -114,5 +116,7 @@ TextTheme textThemedark(context) {
         fontWeight: FontWeight.normal, fontSize: 15, color: Colors.white),
     labelSmall: Constants.appFontdark.copyWith(
         fontWeight: FontWeight.normal, fontSize: 15, color: Color(0xFF4D4C4C)),
+    displaySmall: Constants.appFontdark.copyWith(
+        fontWeight: FontWeight.normal, fontSize: 14, color: Color(0xFF4D4C4C)),
   );
 }
