@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ChipFilter extends StatefulWidget {
   final String label;
@@ -18,7 +16,7 @@ class _ChipFilterState extends State<ChipFilter> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return FilterChip(
-      padding: EdgeInsets.only(top: 6,bottom: 6),
+      padding: const EdgeInsets.only(top: 6,bottom: 6),
       labelStyle: isSelected ? theme.textTheme.labelMedium:theme.textTheme.labelSmall,
       backgroundColor: theme.dialogBackgroundColor,
       selectedColor: theme.primaryColor,

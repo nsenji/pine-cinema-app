@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class InCinemas extends StatefulWidget {
   const InCinemas({super.key});
@@ -12,8 +10,8 @@ class InCinemas extends StatefulWidget {
 class _InCinemasState extends State<InCinemas> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('nothing'),
-    );;
+    );
   }
 }

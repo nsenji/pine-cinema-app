@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ComingSoon extends StatefulWidget {
   const ComingSoon({super.key});
@@ -12,7 +10,7 @@ class ComingSoon extends StatefulWidget {
 class _ComingSoonState extends State<ComingSoon> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('nothing'),
     );
   }

@@ -48,6 +48,6 @@ class _BarIconState extends State<BarIcon> {
         );
     }
 
-    return Scaffold();
+    return const Scaffold();
   }
 }
