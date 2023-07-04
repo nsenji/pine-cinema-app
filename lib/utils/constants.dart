@@ -7,8 +7,8 @@ class Constants {
   static TextStyle appFontlight =
       GoogleFonts.roboto().copyWith(color: const Color(0xFF4D4C4C));
   static TextStyle appFontdark =
-      GoogleFonts.roboto().copyWith(color: Color(0xFFFFFFFF));
+      GoogleFonts.roboto().copyWith(color: const Color(0xFFFFFFFF));
 
-  static Color navBarIconColorlight = Color.fromARGB(255, 107, 99, 99);
-  static Color navBarIconColordark = Color.fromARGB(255, 255, 255, 255);
+  static Color navBarIconColorlight = const Color.fromARGB(255, 107, 99, 99);
+  static Color navBarIconColordark = const Color.fromARGB(255, 255, 255, 255);
 }

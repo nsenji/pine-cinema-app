@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../Custom_widgets/filter_chip.dart';
 import '../../Custom_widgets/movie_card.dart';
 import '../../Custom_widgets/pine_logo.dart';
 import '../../Custom_widgets/red_button.dart';
+import '../custom_widgets/movieCard2.dart';
+import '../custom_widgets/movie_card1.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -22,24 +22,33 @@ class _MyWidgetState extends State<MyWidget> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Pine(),
-            SizedBox(
+            const Pine(),
+            const SizedBox(
               height: 30,
             ),
             Button(
               text: 'Testing',
               onpressed: () {},
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            MovieCard(image: 'assets/images/nsenji.png',),
-            SizedBox(
+            const Expanded(child: MovieCard1(image: 'assets/images/nsenji.png',)),
+            const SizedBox(
               height: 30,
             ),
-            ChipFilter(label: 'Abomination',onpressed: () {
+            ChipFilter(
+              label: 'Abomination',
+              onpressed: () {
+               
+
+              },
               
-            },)
+            )
+            , const SizedBox(
+                  height: 30,
+                )
+                ,const MovieCard2(image: 'assets/images/nsenji.png',)
           ],
         ),
       ),

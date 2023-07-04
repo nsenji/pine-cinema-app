@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Pine extends StatelessWidget {
   const Pine({super.key});
@@ -12,7 +10,7 @@ class Pine extends StatelessWidget {
       style: TextStyle(
         color: Theme.of(context).primaryColor,
         fontFamily: 'Montserrat',
-        fontSize: 24
+        fontSize: 27
       ),
     );
   }
