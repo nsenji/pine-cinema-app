@@ -61,7 +61,7 @@ class _MoviesState extends State<Movies> with TickerProviderStateMixin {
               labelPadding: EdgeInsets.zero,
               padding: EdgeInsets.zero,
               isScrollable: false,
-              labelStyle: theme.textTheme.bodyLarge,
+              labelStyle: theme.textTheme.bodyLarge!.copyWith(fontSize:17),
               labelColor: theme.primaryColor,
               unselectedLabelColor: theme.disabledColor,
               indicatorColor: theme.primaryColor,

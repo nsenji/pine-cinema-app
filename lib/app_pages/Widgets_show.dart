@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../Custom_widgets/filter_chip.dart';
-import '../../Custom_widgets/movie_card.dart';
 import '../../Custom_widgets/pine_logo.dart';
 import '../../Custom_widgets/red_button.dart';
 import '../custom_widgets/movieCard2.dart';

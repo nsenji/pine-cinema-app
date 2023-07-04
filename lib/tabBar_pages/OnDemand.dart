@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pine/custom_widgets/filter_chip.dart';
 
-import '../Custom_widgets/movie_card.dart';
 import '../custom_widgets/movie_card1.dart';
 
 class OnDemand extends StatefulWidget {
