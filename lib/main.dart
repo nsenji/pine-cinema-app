@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pine/app_pages/details_pages/inCinema_details.dart';
 import 'package:pine/utils/custom_theme.dart';
 
 import 'bottom_nav_bar/nav_bar.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         darkTheme: darkThemeData(context),
         themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
-      home: const NavBar(),
+      home: const InCinemaDetails(),
     );
   }
 }
