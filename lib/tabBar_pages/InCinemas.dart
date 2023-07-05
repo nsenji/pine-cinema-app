@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pine/app_pages/details_pages/inCinema_details.dart';
 
 import '../custom_widgets/movie_card1.dart';
 
@@ -73,7 +74,14 @@ class _InCinemasState extends State<InCinemas> {
                     childAspectRatio: (150 / 220)),
                 children: [
                   ...images.map((image) {
-                    return MovieCard1(image: 'assets/images/$image');
+                    return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => InCinemaDetails()));
+                        },
+                        child: MovieCard1(image: 'assets/images/$image'));
                   }).toList()
                 ],
               ),

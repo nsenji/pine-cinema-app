@@ -20,6 +20,7 @@ ColorScheme lightThemeColors(context) {
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData(
     primaryColor: const Color(0xFFEF5B6B),
+    primaryColorLight: const Color(0xFFFFFFFF),
     disabledColor: const Color(0xfff4d4c4c),
     useMaterial3: true,
     dialogBackgroundColor:const Color(0xFFECEAEA),
@@ -40,9 +41,9 @@ TextTheme textThemelight(context) {
     bodyMedium: Constants.appFontlight
         .copyWith(fontWeight: FontWeight.normal, fontSize: 15),
     bodySmall: Constants.appFontlight.copyWith(
-        fontWeight: FontWeight.normal,
-        fontSize: 10,
-        color: const Color(0x2983FFFF)),
+        fontWeight: FontWeight.bold,
+        fontSize: 13,
+        color: const Color(0xFF2983FF)),
     labelLarge: Constants.appFontlight.copyWith(
         fontWeight: FontWeight.bold, fontSize: 17, color: Colors.white),
     labelMedium: Constants.appFontlight.copyWith(
@@ -134,9 +135,9 @@ TextTheme textThemedark(context) {
     bodyMedium: Constants.appFontdark
         .copyWith(fontWeight: FontWeight.normal, fontSize: 15),
     bodySmall: Constants.appFontdark.copyWith(
-        fontWeight: FontWeight.normal,
-        fontSize: 10,
-        color: const Color(0x2983FFFF)),
+        fontWeight: FontWeight.bold,
+        fontSize: 13,
+        color: const Color(0xFF2983FF)),
     labelLarge: Constants.appFontdark.copyWith(
         fontWeight: FontWeight.bold, fontSize: 17, color: Colors.white),
     labelMedium: Constants.appFontdark.copyWith(
