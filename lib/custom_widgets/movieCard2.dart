@@ -14,11 +14,14 @@ class _MovieCard2State extends State<MovieCard2> {
     return
       Card(
         elevation: 2,
-        child: Image.asset(
-          height: 200,
-          width: 200,
-          widget.image,
-          fit: BoxFit.cover,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: Image.asset(
+            height: 150,
+            width: 120,
+            widget.image,
+            fit: BoxFit.cover,
+          ),
         ),
       )
     ;
