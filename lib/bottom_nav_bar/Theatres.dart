@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -9,8 +10,11 @@ class Theatres extends StatefulWidget {
 }
 
 class _TheatresState extends State<Theatres> {
+  List locations = [];
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SingleChildScrollView(
+      child: Column(children: []),
+    );
   }
 }
