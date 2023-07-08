@@ -25,8 +25,8 @@ class _NavBarState extends State<NavBar> {
     var theme = Theme.of(context);
     List pages = [
       const Movies(),
-      const MyTickets(),
       const Theatres(),
+      const MyTickets(),
       const Profile(),
     ];
     return Scaffold(
