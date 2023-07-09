@@ -6,14 +6,14 @@ import 'package:pine/custom_widgets/movieCard2.dart';
 import '../../Custom_widgets/red_button.dart';
 import '../../custom_widgets/cast_and_crew_card.dart';
 
-class InCinemaDetails extends StatefulWidget {
-  const InCinemaDetails({super.key});
+class InCinemaDetailsShowing extends StatefulWidget {
+  const InCinemaDetailsShowing({super.key});
 
   @override
-  State<InCinemaDetails> createState() => _InCinemaDetailsState();
+  State<InCinemaDetailsShowing> createState() => _InCinemaDetailsShowingState();
 }
 
-class _InCinemaDetailsState extends State<InCinemaDetails> {
+class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
   List<String> images = [
     'korea.jpg',
     'thanos.jpg',

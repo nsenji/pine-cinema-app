@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:pine/app_pages/details_pages/inCinema_details_showing.dart';
 
 import '../custom_widgets/movie_card1.dart';
 
-class InCinemas extends StatefulWidget {
-  const InCinemas({super.key});
+class MoviesShowing extends StatefulWidget {
+  final String location;
+  const MoviesShowing({super.key, required this.location});
 
   @override
-  State<InCinemas> createState() => _InCinemasState();
+  State<MoviesShowing> createState() => _MoviesShowingState();
 }
 
-class _InCinemasState extends State<InCinemas> {
+class _MoviesShowingState extends State<MoviesShowing> {
   List<String> images = [
     'korea.jpg',
     'metroplex.jpg',
@@ -35,6 +39,10 @@ class _InCinemasState extends State<InCinemas> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Scaffold(
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        title: Text('Showing at ${widget.location}',style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20),),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -75,10 +83,10 @@ class _InCinemasState extends State<InCinemas> {
                   ...images.map((image) {
                     return InkWell(
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => InCinemaDetails()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => InCinemaDetailsShowing()));
                         },
                         child: MovieCard1(image: 'assets/images/$image'));
                   }).toList()
