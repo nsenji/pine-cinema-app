@@ -10,7 +10,6 @@ class Theatres extends StatefulWidget {
 }
 
 class _TheatresState extends State<Theatres> {
-  List locations = [];
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
