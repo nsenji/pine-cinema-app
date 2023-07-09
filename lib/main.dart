@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pine/app_pages/Widgets_show.dart';
-import 'package:pine/app_pages/details_pages/inCinema_details.dart';
 import 'package:pine/utils/custom_theme.dart';
 
 import 'bottom_nav_bar/nav_bar.dart';
@@ -25,3 +24,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// scrolledUnderElevation: 0  [this removes the appBar color change on scroll]
