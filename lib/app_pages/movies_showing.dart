@@ -6,8 +6,10 @@ import 'package:pine/app_pages/details_pages/inCinema_details_showing.dart';
 import '../custom_widgets/movie_card1.dart';
 
 class MoviesShowing extends StatefulWidget {
+  final showDate;
   final String location;
-  const MoviesShowing({super.key, required this.location});
+  const MoviesShowing(
+      {super.key, required this.location, required this.showDate});
 
   @override
   State<MoviesShowing> createState() => _MoviesShowingState();
@@ -41,7 +43,10 @@ class _MoviesShowingState extends State<MoviesShowing> {
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
-        title: Text('Showing at ${widget.location}',style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20),),
+        title: Text(
+          'Showing at ${widget.location}',
+          style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,23 +55,20 @@ class _MoviesShowingState extends State<MoviesShowing> {
             height: 7,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10, top: 0, right: 10),
+            padding:
+                const EdgeInsets.only(left: 10, top: 0, right: 10, bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Now Showing',
-                  style: theme.textTheme.bodyLarge,
+                  'Showing',
+                  style: theme.textTheme.bodyLarge!.copyWith(fontSize: 17),
                 ),
-                FloatingActionButton(
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    clipBehavior: Clip.none,
-                    mini: true,
-                    child: const Icon(
-                      Icons.search_rounded,
-                      size: 20,
-                    ),
-                    onPressed: () {})
+                Text(
+                  widget.showDate.toString(),
+                  style: theme.textTheme.bodyLarge!
+                      .copyWith(color: theme.primaryColor, fontSize: 17),
+                ),
               ],
             ),
           ),
@@ -86,7 +88,8 @@ class _MoviesShowingState extends State<MoviesShowing> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => InCinemaDetailsShowing()));
+                                  builder: (context) =>
+                                      InCinemaDetailsShowing()));
                         },
                         child: MovieCard1(image: 'assets/images/$image'));
                   }).toList()

@@ -5,6 +5,7 @@ import 'package:pine/custom_widgets/movieCard2.dart';
 
 import '../../Custom_widgets/red_button.dart';
 import '../../custom_widgets/cast_and_crew_card.dart';
+import '../../custom_widgets/time_chip.dart';
 
 class InCinemaDetailsShowing extends StatefulWidget {
   const InCinemaDetailsShowing({super.key});
@@ -34,7 +35,62 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
           padding: const EdgeInsets.only(bottom: 10, right: 20, left: 20),
           child: Button(
             text: 'Book Ticket',
-            onpressed: () {},
+            onpressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    elevation: 2,
+                    title: Text(
+                      'Please select time you want to watch',
+                      style: theme.textTheme.labelMedium!.copyWith(fontSize: 15,color: theme.disabledColor),
+                    ),
+                    content: Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                TimeChip(
+                                  label: '10:30 pm',
+                                  onpressed: () {},
+                                ),
+                                SizedBox(width: 5,),
+                                TimeChip(
+                                  label: '10:30 pm',
+                                  onpressed: () {},
+                                ),
+                                SizedBox(width: 5,),
+                                TimeChip(
+                                  label: '10:30 pm',
+                                  onpressed: () {},
+                                ),
+                                SizedBox(width: 5,),
+                                TimeChip(
+                                  label: '10:30 pm',
+                                  onpressed: () {},
+                                ),
+                                SizedBox(width: 5,),
+                                TimeChip(
+                                  label: '10:30 pm',
+                                  onpressed: () {},
+                                ),
+                                SizedBox(width: 5,),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 40,),
+                          Button(text: 'Continue', onpressed: (){})
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
           ),
         ),
         extendBodyBehindAppBar: true,
@@ -129,7 +185,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                       height: 10,
                     ),
                     Text(
-                      'datafjosjjshljkshfjkshljkshkblksfhksdbflhsdbflhksfblsdkbflskdbfshkdbfkshdbfkhsdfbhksdkjofdgslfhgffsjlgjlsfdkbglksdfjbgksdfjbglksdfjbgksdfjbgs;fljsv;dfjgsff;ljghsfjglnjsfkgkfjsdbgkjfdlgbljkfdghvfdjlkghvfdjglvdfsflsvjdf;jghljdfshgjkldfbgjlsdf;bgjdflgj;klsdbgjklfdbglkdfjsgdfjbgdfsfdosgjklfgdjlgsfdgsd',
+                      'In a world on the brink of chaos, a courageous team of scientists embarks on a perilous mission to save humanity. They must race against time to find the ancient artifact that holds the key to restoring balance and preventing the ultimate catastrophe. As they journey through treacherous landscapes and encounter mysterious beings, their determination and resilience are put to the test. This epic adventure will keep you on the edge of your seat, blending heart-pounding action with thought-provoking themes. Get ready for a thrilling cinematic experience like no other!',
                       style: theme.textTheme.bodyMedium,
                       maxLines: maxlines ? 3 : null,
                       overflow: maxlines ? TextOverflow.ellipsis : null,
@@ -241,26 +297,36 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                           'Cast',
                           style: theme.textTheme.bodyLarge,
                         )),
-
-                    SizedBox(height: 13,),
-
+                    SizedBox(
+                      height: 13,
+                    ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: 
-                      Row(
+                      child: Row(
                         children: [
-                           ...images.map((image) => Padding(
-                             padding: const EdgeInsets.only(right: 20),
-                             child: Column(
-                              children: [
-                                CastAndCrewCard(image: 'assets/images/$image',),
-                                SizedBox(height: 6,),
-                                SizedBox(
-                                  width: 70,
-                                  child: Text('Leornaldo decaprio', style: theme.textTheme.bodyMedium!.copyWith(fontSize: 13),textAlign: TextAlign.center,))
-                              ],
-                                                     ),
-                           )).toList()
+                          ...images
+                              .map((image) => Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: Column(
+                                      children: [
+                                        CastAndCrewCard(
+                                          image: 'assets/images/$image',
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        SizedBox(
+                                            width: 70,
+                                            child: Text(
+                                              'Leornaldo decaprio',
+                                              style: theme.textTheme.bodyMedium!
+                                                  .copyWith(fontSize: 13),
+                                              textAlign: TextAlign.center,
+                                            ))
+                                      ],
+                                    ),
+                                  ))
+                              .toList()
                         ],
                       ),
                     ),
@@ -273,30 +339,42 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                           'Crew',
                           style: theme.textTheme.bodyLarge,
                         )),
-
-                    SizedBox(height: 13,),
-
+                    SizedBox(
+                      height: 13,
+                    ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: 
-                      Row(
+                      child: Row(
                         children: [
-                           ...images.map((image) => Padding(
-                             padding: const EdgeInsets.only(right: 20),
-                             child: Column(
-                              children: [
-                                CastAndCrewCard(image: 'assets/images/$image',),
-                                SizedBox(height: 6,),
-                                SizedBox(
-                                  width: 70,
-                                  child: Text('Leornaldo decaprio', style: theme.textTheme.bodyMedium!.copyWith(fontSize: 13),textAlign: TextAlign.center,))
-                              ],
-                                                     ),
-                           )).toList()
+                          ...images
+                              .map((image) => Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: Column(
+                                      children: [
+                                        CastAndCrewCard(
+                                          image: 'assets/images/$image',
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        SizedBox(
+                                            width: 70,
+                                            child: Text(
+                                              'Leornaldo decaprio',
+                                              style: theme.textTheme.bodyMedium!
+                                                  .copyWith(fontSize: 13),
+                                              textAlign: TextAlign.center,
+                                            ))
+                                      ],
+                                    ),
+                                  ))
+                              .toList()
                         ],
                       ),
                     ),
-                    SizedBox(height: 30,)
+                    SizedBox(
+                      height: 30,
+                    )
                   ],
                 ),
               ),

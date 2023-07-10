@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pine/app_pages/movies_showing.dart';
+import 'package:intl/intl.dart';
+import 'package:pine/utils/custom_theme.dart';
 
 import '../Custom_widgets/red_button.dart';
 import '../custom_widgets/cinemas_details_map.dart';
 import '../custom_widgets/movieCard2.dart';
 import '../custom_widgets/red_button_small.dart';
+import '../utils/constants.dart';
 
 class Theatres extends StatefulWidget {
   const Theatres({super.key});
@@ -16,6 +19,7 @@ class Theatres extends StatefulWidget {
 class _TheatresState extends State<Theatres> {
   @override
   Widget build(BuildContext context) {
+    dynamic showDate;
     var textTheme = Theme.of(context).textTheme;
     var theme = Theme.of(context);
     return Scaffold(
@@ -79,12 +83,35 @@ class _TheatresState extends State<Theatres> {
                               ButtonSmall(
                                 text: 'Movies Showing',
                                 width: 150,
-                                onpressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MoviesShowing(
-                                              location: location['name'])));
+                                onpressed: () async {
+                                  DateTime? pickedDate = await showDatePicker(
+                                      helpText:
+                                          'Select date to show movies available that day',
+                                          
+                                      context: context,
+                                      initialDate: DateTime.now(),
+                                      firstDate: DateTime(2023),
+                                      lastDate: DateTime(2101));
+
+                                  if (pickedDate != null) {
+                                    String formattedDate =
+                                        DateFormat('EEEE, MMMM d, y')
+                                            .format(pickedDate);
+
+                                    setState(() {
+                                      showDate = formattedDate;
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  MoviesShowing(
+                                                      showDate: showDate,
+                                                      location:
+                                                          location['name'])));
+                                    });
+                                  } else {
+                                    print("Date is not selected");
+                                  }
                                 },
                               )
                             ],
