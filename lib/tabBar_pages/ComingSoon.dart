@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../custom_widgets/movie_card1.dart';
 import '../custom_widgets/movie_card_comingSoon.dart';
 
 class ComingSoon extends StatefulWidget {

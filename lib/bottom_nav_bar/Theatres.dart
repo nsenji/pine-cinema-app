@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pine/app_pages/movies_showing.dart';
 import 'package:intl/intl.dart';
-import 'package:pine/utils/custom_theme.dart';
 
-import '../Custom_widgets/red_button.dart';
 import '../custom_widgets/cinemas_details_map.dart';
 import '../custom_widgets/movieCard2.dart';
 import '../custom_widgets/red_button_small.dart';
-import '../utils/constants.dart';
 
 class Theatres extends StatefulWidget {
   const Theatres({super.key});
@@ -47,7 +44,7 @@ class _TheatresState extends State<Theatres> {
                           MovieCard2(
                             image: location['image'],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Column(
@@ -61,7 +58,7 @@ class _TheatresState extends State<Theatres> {
                                       .copyWith(fontSize: 16),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Text(
@@ -69,7 +66,7 @@ class _TheatresState extends State<Theatres> {
                                 style: textTheme.bodyMedium!
                                     .copyWith(fontSize: 15),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Text(
@@ -77,7 +74,7 @@ class _TheatresState extends State<Theatres> {
                                 style:
                                     textTheme.bodyLarge!.copyWith(fontSize: 15),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               ButtonSmall(
@@ -131,10 +128,10 @@ class _TheatresState extends State<Theatres> {
                       ),
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.grey,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   )
                 ],

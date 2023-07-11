@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pine/app_pages/details_pages/inCinema_details_showing.dart';
 
 import '../custom_widgets/movie_card1.dart';
@@ -89,7 +87,7 @@ class _MoviesShowingState extends State<MoviesShowing> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      InCinemaDetailsShowing()));
+                                      const InCinemaDetailsShowing()));
                         },
                         child: MovieCard1(image: 'assets/images/$image'));
                   }).toList()

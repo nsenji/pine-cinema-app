@@ -5,7 +5,6 @@ import '../../Custom_widgets/pine_logo.dart';
 import '../../Custom_widgets/red_button.dart';
 import '../custom_widgets/cast_and_crew_card.dart';
 import '../custom_widgets/movieCard2.dart';
-import '../custom_widgets/movie_card1.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -32,7 +31,7 @@ class _MyWidgetState extends State<MyWidget> {
               const SizedBox(
                 height: 30,
               ),
-              CastAndCrewCard(image: 'assets/images/nsenji.png',),
+              const CastAndCrewCard(image: 'assets/images/nsenji.png',),
               const SizedBox(
                 height: 30,
               ),

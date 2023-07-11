@@ -16,7 +16,7 @@ class _TimeChipState extends State<TimeChip> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return InputChip(
-      labelPadding: EdgeInsets.only(top: 6,bottom: 6,left: 10,right: 10),
+      labelPadding: const EdgeInsets.only(top: 6,bottom: 6,left: 10,right: 10),
       padding: const EdgeInsets.only(top: 6,bottom: 6),
       labelStyle: isSelected ? theme.textTheme.labelMedium!.copyWith(fontSize:15,fontWeight: FontWeight.bold ):theme.textTheme.labelSmall!.copyWith(fontSize:15,fontWeight: FontWeight.bold ),
       backgroundColor: theme.dialogBackgroundColor,
