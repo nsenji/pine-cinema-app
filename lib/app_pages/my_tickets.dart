@@ -14,8 +14,8 @@ class _MyTicketsState extends State<MyTickets> {
     
       return Scaffold(
       appBar: AppBar(
-        title: const Text("My Tickets"),
-        
+        title: const Text("MyTickets Tickets"),
+        centerTitle: true,
       ),
       body: Stack(
           children: [
@@ -115,7 +115,7 @@ class _MyTicketsState extends State<MyTickets> {
                           padding: const EdgeInsets.only(top: 0),
                           child: Column(
                             children: [
-                              Container(                                               // this
+                              Container(
                                 padding: const EdgeInsets.only(top: 0),
                                 child: Row(
                                   children: [
