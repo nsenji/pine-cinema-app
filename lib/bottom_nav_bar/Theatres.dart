@@ -95,7 +95,7 @@ class _TheatresState extends State<Theatres> {
 
                                   if (pickedDate != null) {
                                     String formattedDate =
-                                        DateFormat('EEEE, MMMM d, y')
+                                        DateFormat('EE, d-MM-y')
                                             .format(pickedDate);
 
                                     setState(() {
