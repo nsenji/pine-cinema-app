@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pine/custom_widgets/movieCard2.dart';
 
 import '../../Custom_widgets/red_button.dart';
@@ -58,31 +56,31 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                SizedBox(width: 5,),
+                                const SizedBox(width: 5,),
                               ],
                             ),
                           ),
-                          SizedBox(height: 40,),
+                          const SizedBox(height: 40,),
                           Button(text: 'Continue', onpressed: (){})
                         ],
                       ),
@@ -144,7 +142,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                         .copyWith(fontSize: 18),
                                     overflow: TextOverflow.ellipsis,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   InkWell(
@@ -157,7 +155,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                           Icons.video_library_rounded,
                                           color: theme.primaryColor,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 6,
                                         ),
                                         Text(
@@ -181,7 +179,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                 padding: const EdgeInsets.only(right: 10, left: 10),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -191,7 +189,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                       overflow: maxlines ? TextOverflow.ellipsis : null,
                       //  softWrap: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Align(
@@ -217,10 +215,10 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                     'Read Less',
                                     style: theme.textTheme.bodySmall,
                                   ))),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
-                    Divider(
+                    const Divider(
                       color: Color(0xFFB4B4B4),
                     ),
                     Padding(
@@ -236,46 +234,46 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                               color: Colors.amber[600],
                               size: 20,
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               '8.3',
                               style: theme.textTheme.bodyMedium!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Container(
                               height: 3,
                               width: 3,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   color: Colors.grey, shape: BoxShape.circle),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               'Adventure',
                               style: theme.textTheme.bodyMedium!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Container(
                               height: 3,
                               width: 3,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   color: Colors.grey, shape: BoxShape.circle),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               '150 min',
                               style: theme.textTheme.bodyMedium!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Container(
                               height: 3,
                               width: 3,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   color: Colors.grey, shape: BoxShape.circle),
                             ),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             Text(
                               'IMDB',
                               style: theme.textTheme.bodyMedium!
@@ -285,10 +283,10 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                         ),
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       color: Color(0xFFB4B4B4),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Align(
@@ -297,7 +295,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                           'Cast',
                           style: theme.textTheme.bodyLarge,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 13,
                     ),
                     SingleChildScrollView(
@@ -312,7 +310,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                         CastAndCrewCard(
                                           image: 'assets/images/$image',
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 6,
                                         ),
                                         SizedBox(
@@ -330,7 +328,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Align(
@@ -339,7 +337,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                           'Crew',
                           style: theme.textTheme.bodyLarge,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 13,
                     ),
                     SingleChildScrollView(
@@ -354,7 +352,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                         CastAndCrewCard(
                                           image: 'assets/images/$image',
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 6,
                                         ),
                                         SizedBox(
@@ -372,7 +370,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     )
                   ],

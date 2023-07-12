@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pine/app_pages/Widgets_show.dart';
 import 'package:pine/utils/custom_theme.dart';
 
 import 'bottom_nav_bar/nav_bar.dart';
-import 'custom_widgets/cinemas_details_map.dart';
 
 void main() {
   runApp(const MyApp());

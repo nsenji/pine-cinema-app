@@ -1,20 +1,20 @@
 
 import 'package:flutter/material.dart';
 
-class MyTickets extends StatefulWidget {
-  const MyTickets({Key? key}) : super(key: key);
+class PlaceholderTickets extends StatefulWidget {
+  const PlaceholderTickets({Key? key}) : super(key: key);
 
   @override
-  State<MyTickets> createState() => _MyTicketsState();
+  State<PlaceholderTickets> createState() => _PlaceholderTicketsState();
 }
 
-class _MyTicketsState extends State<MyTickets> {
+class _PlaceholderTicketsState extends State<PlaceholderTickets> {
   @override
   Widget build(BuildContext context) {
     
       return Scaffold(
       appBar: AppBar(
-        title: const Text("MyTickets Tickets"),
+        title: const Text("PlaceholderTickets Tickets"),
         centerTitle: true,
       ),
       body: Stack(
@@ -170,7 +170,7 @@ class _MyTicketsState extends State<MyTickets> {
                               ),
                               Center(
                                 child: Material(
-                                  child: Container(
+                                  child: SizedBox(
                                       height: 80,
                                       child: Row(
                                         children: [
