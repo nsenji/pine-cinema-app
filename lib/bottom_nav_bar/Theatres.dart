@@ -25,7 +25,7 @@ class _TheatresState extends State<Theatres> {
         elevation: 0,
         title: Text(
           'Cinemas',
-          style: textTheme.bodyLarge!.copyWith(fontSize: 20),
+          style: textTheme.bodyLarge!.copyWith(fontSize: 22),
         ),
       ),
       body: SingleChildScrollView(
@@ -51,11 +51,11 @@ class _TheatresState extends State<Theatres> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(top: 8),
+                                padding: const EdgeInsets.only(top: 5),
                                 child: Text(
                                   location['name'],
                                   style: textTheme.bodyLarge!
-                                      .copyWith(fontSize: 16),
+                                      .copyWith(fontSize: 18),
                                 ),
                               ),
                               const SizedBox(

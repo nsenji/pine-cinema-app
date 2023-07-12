@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../custom_widgets/ticket.dart';
+
 class MyTickets extends StatefulWidget {
   const MyTickets({Key? key}) : super(key: key);
 
@@ -11,27 +13,34 @@ class _MyTicketsState extends State<MyTickets> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Scaffold(
-        appBar: AppBar(
-          title:  Text("My Tickets",style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20)),
-        ),
-        body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
-              child: Column(
-                      children: const [
-              MyTickets(),
-              SizedBox(height: 20,),
-              MyTickets(),
-              SizedBox(height: 20,),
-              MyTickets(),
-              SizedBox(height: 20,),
-              MyTickets(),
-              SizedBox(height: 20,),
-              MyTickets(),
-              SizedBox(height: 20,),
-                      ],
-                    ),
-            )));
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            scrolledUnderElevation: 0,
+            title:  Padding(
+              padding: const EdgeInsets.only(left: 5),
+              child: Text("My Tickets",style: theme.textTheme.bodyLarge!.copyWith(fontSize: 22)),
+            ),
+          ),
+          body: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                child: Column(
+                        children: const [
+                Ticket(),
+                SizedBox(height: 20,),
+                Ticket(),
+                SizedBox(height: 20,),
+                Ticket(),
+                SizedBox(height: 20,),
+                Ticket(),
+                SizedBox(height: 20,),
+                Ticket(),
+                SizedBox(height: 20,),
+                        ],
+                      ),
+              ))),
+    );
   }
 }
