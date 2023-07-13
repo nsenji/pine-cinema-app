@@ -4,6 +4,7 @@ import 'package:pine/custom_widgets/movieCard2.dart';
 import '../../Custom_widgets/red_button.dart';
 import '../../custom_widgets/cast_and_crew_card.dart';
 import '../../custom_widgets/time_chip.dart';
+import '../select_seats.dart';
 
 class InCinemaDetailsShowing extends StatefulWidget {
   const InCinemaDetailsShowing({super.key});
@@ -41,7 +42,8 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                     elevation: 2,
                     title: Text(
                       'Please select time you want to watch',
-                      style: theme.textTheme.labelMedium!.copyWith(fontSize: 15,color: theme.disabledColor),
+                      style: theme.textTheme.labelMedium!
+                          .copyWith(fontSize: 15, color: theme.disabledColor),
                     ),
                     content: Padding(
                       padding: const EdgeInsets.only(top: 5),
@@ -56,32 +58,51 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                const SizedBox(width: 5,),
+                                const SizedBox(
+                                  width: 5,
+                                ),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                const SizedBox(width: 5,),
+                                const SizedBox(
+                                  width: 5,
+                                ),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                const SizedBox(width: 5,),
+                                const SizedBox(
+                                  width: 5,
+                                ),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                const SizedBox(width: 5,),
+                                const SizedBox(
+                                  width: 5,
+                                ),
                                 TimeChip(
                                   label: '10:30 pm',
                                   onpressed: () {},
                                 ),
-                                const SizedBox(width: 5,),
+                                const SizedBox(
+                                  width: 5,
+                                ),
                               ],
                             ),
                           ),
-                          const SizedBox(height: 40,),
-                          Button(text: 'Continue', onpressed: (){})
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Button(
+                              text: 'Continue',
+                              onpressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SelectSeats()));
+                              })
                         ],
                       ),
                     ),
