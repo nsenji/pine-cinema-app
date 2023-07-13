@@ -23,6 +23,22 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
           scrolledUnderElevation: 0,
           elevation: 0,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: Icon(
+                Icons.notifications_outlined,
+                size: 27,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: Icon(
+                Icons.add_circle_outline_rounded,
+                size: 27,
+              ),
+            )
+          ],
           title: Text(
             'Profile',
             style: theme.textTheme.bodyLarge!.copyWith(fontSize: 22),
@@ -50,7 +66,8 @@ class _ProfileState extends State<Profile> {
                         width: 300,
                         child: Text(
                           'Joshua Kimmich',
-                          style: theme.textTheme.bodyLarge,
+                          style: theme.textTheme.bodyLarge!
+                                        .copyWith(fontSize: 17),
                         )),
                   ],
                 ),
@@ -81,8 +98,8 @@ class _ProfileState extends State<Profile> {
                                 children: [
                                   Text(
                                     'Watch List',
-                                    style: theme.textTheme.bodyLarge!
-                                        .copyWith(fontSize: 17),
+                                    style: theme.textTheme.bodyMedium!
+                                        .copyWith(fontSize: 16),
                                   ),
                                   Icon(Icons.arrow_forward_sharp)
                                 ],
@@ -109,8 +126,8 @@ class _ProfileState extends State<Profile> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Favourites',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(fontSize: 17)),
+                                      style: theme.textTheme.bodyMedium!
+                                        .copyWith(fontSize: 16)),
                                   Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
@@ -135,8 +152,8 @@ class _ProfileState extends State<Profile> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Go Premium',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(fontSize: 17)),
+                                      style: theme.textTheme.bodyMedium!
+                                        .copyWith(fontSize: 16)),
                                   Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
@@ -166,8 +183,8 @@ class _ProfileState extends State<Profile> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Payments',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(fontSize: 17)),
+                                      style: theme.textTheme.bodyMedium!
+                                        .copyWith(fontSize: 16)),
                                   Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
@@ -178,146 +195,123 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 29),
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Settings',
-                      style: theme.textTheme.bodyMedium!.copyWith(fontSize: 17),
+                      style: theme.textTheme.bodyLarge!.copyWith(fontSize: 17),
                     )),
                 SizedBox(height: 20),
                 Center(
                   child: SizedBox(
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 0, right: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(Icons.palette_outlined),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'Theme',
-                                    style: theme.textTheme.bodyLarge!
-                                        .copyWith(fontSize: 17),
-                                  ),
-                                ],
-                              ),
-                              Transform.scale(
-                                scale: 0.75,
-                                child: Switch(
-                                  value: isSwitched,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      if (isSwitched == true) {
-                                        setState(() {
-                                          isSwitched = false;
-                                        });
-                                      } else {
-                                        setState(() {
-                                          isSwitched = true;
-                                        });
-                                      }
-                                    });
-                                  },
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 0, right: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(Icons.notifications_none),
-                                  SizedBox(width: 10),
-                                  Text('Push Notification',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(fontSize: 17)),
-                                ],
-                              ),
-                              Transform.scale(
-                              scale: 0.75,
-                              child: Switch(
-                                value: isSwitched2,
-                                onChanged: (value) {
-                                  setState(() {
-                                    if (isSwitched2 == true) {
-                                      setState(() {
-                                        isSwitched2 = false;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        isSwitched2 = true;
-                                      });
-                                    }
-                                  });
-                                },
-                              ),
-                            )
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 0, right: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(Icons.email_outlined),
-                                  SizedBox(width: 10),
-                                  Text('Email Notification',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(fontSize: 17)),
-                                ],
-                              ),
-                              Transform.scale(
-                              scale: 0.75,
-                              child: Switch(
-                                value: isSwitched3,
-                                onChanged: (value) {
-                                  setState(() {
-                                    if (isSwitched3 == true) {
-                                      setState(() {
-                                        isSwitched3 = false;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        isSwitched3 = true;
-                                      });
-                                    }
-                                  });
-                                },
-                              ),
-                            )
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        InkWell(
-                          onTap: () => {},
-                          child: Padding(
-                            padding: const EdgeInsets.only( right: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
                               children: [
-                                
-                                Text('Twitter Connect',
-                                    style: theme.textTheme.bodyLarge!
-                                        .copyWith(fontSize: 17)),
+                                Icon(Icons.palette_outlined),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Theme',
+                                  style: theme.textTheme.bodyMedium!
+                                      .copyWith(fontSize: 16),
+                                ),
                               ],
                             ),
-                          ),
+                            Transform.scale(
+                              scale: 0.7,
+                              child: Switch(
+                                value: isSwitched,
+                                onChanged: (value) {
+                                  setState(() {
+                                    if (isSwitched == true) {
+                                      setState(() {
+                                        isSwitched = false;
+                                      });
+                                    } else {
+                                      setState(() {
+                                        isSwitched = true;
+                                      });
+                                    }
+                                  });
+                                },
+                              ),
+                            )
+                          ],
                         ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.notifications_none),
+                                SizedBox(width: 10),
+                                Text('Push Notification',
+                                    style: theme.textTheme.bodyMedium!
+                                      .copyWith(fontSize: 16)),
+                              ],
+                            ),
+                            Transform.scale(
+                            scale: 0.7,
+                            child: Switch(
+                              value: isSwitched2,
+                              onChanged: (value) {
+                                setState(() {
+                                  if (isSwitched2 == true) {
+                                    setState(() {
+                                      isSwitched2 = false;
+                                    });
+                                  } else {
+                                    setState(() {
+                                      isSwitched2 = true;
+                                    });
+                                  }
+                                });
+                              },
+                            ),
+                          )
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.email_outlined),
+                                SizedBox(width: 10),
+                                Text('Email Notification',
+                                    style: theme.textTheme.bodyMedium!
+                                      .copyWith(fontSize: 16)),
+                              ],
+                            ),
+                            Transform.scale(
+                            scale: 0.7,
+                            child: Switch(
+                              value: isSwitched3,
+                              onChanged: (value) {
+                                setState(() {
+                                  if (isSwitched3 == true) {
+                                    setState(() {
+                                      isSwitched3 = false;
+                                    });
+                                  } else {
+                                    setState(() {
+                                      isSwitched3 = true;
+                                    });
+                                  }
+                                });
+                              },
+                            ),
+                          )
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        
                         SizedBox(height:10),
                         InkWell(
                           onTap: () => {},
