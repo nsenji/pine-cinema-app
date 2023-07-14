@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pine/app_pages/ticket_confirmation.dart';
 
 import '../Custom_widgets/red_button.dart';
