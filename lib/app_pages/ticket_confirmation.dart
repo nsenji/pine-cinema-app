@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+import 'package:pine/app_pages/confirmation.dart';
 
 import '../Custom_widgets/red_button.dart';
+import '../custom_widgets/ticket_view.dart';
 
 class TicketConfirmation extends StatefulWidget {
   const TicketConfirmation({super.key});
@@ -31,6 +32,15 @@ class _TicketConfirmationState extends State<TicketConfirmation> {
             // Navigator.push(context,
             //     MaterialPageRoute(builder: (context) => ()));
           },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [TicketView()],
+          ),
         ),
       ),
     );
