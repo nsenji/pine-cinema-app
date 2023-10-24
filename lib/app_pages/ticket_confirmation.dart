@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pine/custom_widgets/red_button.dart';
 
-import 'package:pine/app_pages/confirmation.dart';
 
-import '../Custom_widgets/red_button.dart';
 import '../custom_widgets/ticket_view.dart';
 
 class TicketConfirmation extends StatefulWidget {
@@ -34,9 +33,9 @@ class _TicketConfirmationState extends State<TicketConfirmation> {
           },
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
+          padding: EdgeInsets.only(left: 30,right: 30,top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [TicketView()],

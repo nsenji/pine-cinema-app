@@ -37,8 +37,8 @@ class _PlaceholderTicketsState extends State<PlaceholderTickets> {
                         padding: const EdgeInsets.only(right: 45),
                         height: 60,
                         width: 140,
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "DATE",
                               style: TextStyle(
@@ -59,8 +59,8 @@ class _PlaceholderTicketsState extends State<PlaceholderTickets> {
                         padding: const EdgeInsets.only(right: 15),
                         height: 60,
                         width: 80,
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "TIME",
                               style: TextStyle(
@@ -79,8 +79,8 @@ class _PlaceholderTicketsState extends State<PlaceholderTickets> {
                         width: 130,
                         height: 60,
                         padding: const EdgeInsets.only(left: 35),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "TOTAL PRICE",
                               style: TextStyle(
@@ -178,8 +178,8 @@ class _PlaceholderTicketsState extends State<PlaceholderTickets> {
                                             height: 60,
                                             width: 140,
                                             padding: const EdgeInsets.only(right: 10),
-                                            child: Column(
-                                              children: const [
+                                            child: const Column(
+                                              children: [
                                                 Text(
                                                   "SEAT NUMBER",
                                                   style: TextStyle(
@@ -202,8 +202,8 @@ class _PlaceholderTicketsState extends State<PlaceholderTickets> {
                                               padding: const EdgeInsets.only(left: 25),
                                               height: 60,
                                               width: 140,
-                                              child: Column(
-                                                children: const [
+                                              child: const Column(
+                                                children: [
                                                   Text("PRICE",
                                                       style: TextStyle(
                                                           fontWeight: FontWeight.w300,

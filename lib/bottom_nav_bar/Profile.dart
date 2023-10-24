@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../custom_widgets/avatar.dart';
-import '../custom_widgets/ticket.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -101,7 +100,7 @@ class _ProfileState extends State<Profile> {
                                     style: theme.textTheme.bodyMedium!
                                         .copyWith(fontSize: 16),
                                   ),
-                                  Icon(Icons.arrow_forward_sharp)
+                                  const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
                             ),
@@ -112,7 +111,7 @@ class _ProfileState extends State<Profile> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
-                              border: Border(
+                              border: const Border(
                                   right: BorderSide(color: Colors.grey),
                                   left: BorderSide(color: Colors.grey),
                                   bottom: BorderSide(color: Colors.grey)),
@@ -128,7 +127,7 @@ class _ProfileState extends State<Profile> {
                                   Text('Favourites',
                                       style: theme.textTheme.bodyMedium!
                                         .copyWith(fontSize: 16)),
-                                  Icon(Icons.arrow_forward_sharp)
+                                  const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
                             ),
@@ -139,7 +138,7 @@ class _ProfileState extends State<Profile> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
-                              border: Border(
+                              border: const Border(
                                   right: BorderSide(color: Colors.grey),
                                   left: BorderSide(color: Colors.grey)),
                             ),
@@ -154,7 +153,7 @@ class _ProfileState extends State<Profile> {
                                   Text('Go Premium',
                                       style: theme.textTheme.bodyMedium!
                                         .copyWith(fontSize: 16)),
-                                  Icon(Icons.arrow_forward_sharp)
+                                  const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
                             ),
@@ -165,10 +164,10 @@ class _ProfileState extends State<Profile> {
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(16),
                                   bottomRight: Radius.circular(16)),
-                              border: Border(
+                              border: const Border(
                                   bottom: BorderSide(color: Colors.grey),
                                   right: BorderSide(color: Colors.grey),
                                   left: BorderSide(color: Colors.grey),
@@ -185,7 +184,7 @@ class _ProfileState extends State<Profile> {
                                   Text('Payments',
                                       style: theme.textTheme.bodyMedium!
                                         .copyWith(fontSize: 16)),
-                                  Icon(Icons.arrow_forward_sharp)
+                                  const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
                             ),
@@ -195,14 +194,14 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                 ),
-                SizedBox(height: 29),
+                const SizedBox(height: 29),
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Settings',
                       style: theme.textTheme.bodyLarge!.copyWith(fontSize: 17),
                     )),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Center(
                   child: SizedBox(
                     child: Column(
@@ -212,8 +211,8 @@ class _ProfileState extends State<Profile> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.palette_outlined),
-                                SizedBox(width: 10),
+                                const Icon(Icons.palette_outlined),
+                                const SizedBox(width: 10),
                                 Text(
                                   'Theme',
                                   style: theme.textTheme.bodyMedium!
@@ -242,14 +241,14 @@ class _ProfileState extends State<Profile> {
                             )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.notifications_none),
-                                SizedBox(width: 10),
+                                const Icon(Icons.notifications_none),
+                                const SizedBox(width: 10),
                                 Text('Push Notification',
                                     style: theme.textTheme.bodyMedium!
                                       .copyWith(fontSize: 16)),
@@ -276,14 +275,14 @@ class _ProfileState extends State<Profile> {
                           )
                           ],
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.email_outlined),
-                                SizedBox(width: 10),
+                                const Icon(Icons.email_outlined),
+                                const SizedBox(width: 10),
                                 Text('Email Notification',
                                     style: theme.textTheme.bodyMedium!
                                       .copyWith(fontSize: 16)),
@@ -310,9 +309,9 @@ class _ProfileState extends State<Profile> {
                           )
                           ],
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         
-                        SizedBox(height:10),
+                        const SizedBox(height:10),
                         InkWell(
                           onTap: () => {},
                           child: Padding(

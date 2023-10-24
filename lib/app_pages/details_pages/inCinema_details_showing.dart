@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pine/custom_widgets/movieCard2.dart';
+import 'package:pine/custom_widgets/red_button.dart';
 
-import '../../Custom_widgets/red_button.dart';
 import '../../custom_widgets/cast_and_crew_card.dart';
 import '../../custom_widgets/time_chip.dart';
 import '../select_seats.dart';
@@ -101,7 +101,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SelectSeats()));
+                                        builder: (context) => const SelectSeats()));
                               })
                         ],
                       ),

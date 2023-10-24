@@ -14,7 +14,7 @@ class Money extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage("assets/images/avatar.jpg"),
                     fit: BoxFit.cover)),
             height: 300,
@@ -28,7 +28,7 @@ class Money extends StatelessWidget {
             child: LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
               return Container(
-                padding: EdgeInsets.only(top: 10, left: 10),
+                padding: const EdgeInsets.only(top: 10, left: 10),
                 height: 75,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -40,12 +40,12 @@ class Money extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(right: 45),
+                        padding: const EdgeInsets.only(right: 45),
                         height: 60,
                         // width: AppLayout.getWidth(140),
-                        child: Column(
+                        child: const Column(
                           children: [
-                            const Text(
+                            Text(
                               "DATE",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300, fontSize: 11),
@@ -55,7 +55,7 @@ class Money extends StatelessWidget {
                             ),
                             Text(
                               'date',
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             )
                           ],
@@ -63,12 +63,12 @@ class Money extends StatelessWidget {
                       ),
                       // Expanded(child: Container()),
                       Container(
-                        padding: EdgeInsets.only(right: 15),
+                        padding: const EdgeInsets.only(right: 15),
                         height: 60,
                         // width: AppLayout.getWidth(60),
-                        child: Column(
+                        child: const Column(
                           children: [
-                            const Text(
+                            Text(
                               "TIME",
                               style: TextStyle(
                                   fontWeight: FontWeight.w300, fontSize: 11),
@@ -76,7 +76,7 @@ class Money extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            const Text('14:30',
+                            Text('14:30',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15))
                           ],
@@ -86,7 +86,7 @@ class Money extends StatelessWidget {
                       Container(
                         // width: AppLayout.getWidth(130),
                         height: 60,
-                        padding: EdgeInsets.only(left: 35),
+                        padding: const EdgeInsets.only(left: 35),
                         child: Column(
                           children: [
                             const Text(
@@ -94,7 +94,7 @@ class Money extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.w300, fontSize: 11),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -129,10 +129,10 @@ class Money extends StatelessWidget {
                           color: Colors.white,
                           child: Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                                 width: 10,
-                                child: const DecoratedBox(
+                                child: DecoratedBox(
                                     decoration: BoxDecoration(
                                         color: Color.fromARGB(255, 0, 0, 0),
                                         borderRadius: BorderRadius.only(
@@ -141,7 +141,7 @@ class Money extends StatelessWidget {
                               ),
                               Expanded(
                                   child: Padding(
-                                padding: EdgeInsets.all(12),
+                                padding: const EdgeInsets.all(12),
                                 child: LayoutBuilder(
                                   builder: (BuildContext context,
                                       BoxConstraints constraints) {
@@ -154,11 +154,11 @@ class Money extends StatelessWidget {
                                       children: List.generate(
                                           (constraints.constrainWidth() / 15)
                                               .floor(),
-                                          (index) => SizedBox(
+                                          (index) => const SizedBox(
                                                 //try changing this back to a sized box
                                                 width: 5,
                                                 height: 1,
-                                                child: const DecoratedBox(
+                                                child: DecoratedBox(
                                                   decoration: BoxDecoration(
                                                       color: Color.fromARGB(
                                                           255, 0, 0, 0)),
@@ -168,10 +168,10 @@ class Money extends StatelessWidget {
                                   },
                                 ),
                               )),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                                 width: 10,
-                                child: const DecoratedBox(
+                                child: DecoratedBox(
                                     decoration: BoxDecoration(
                                         color: Colors.black,
                                         borderRadius: BorderRadius.only(
@@ -191,10 +191,10 @@ class Money extends StatelessWidget {
                                     Container(
                                       height: 60,
                                       width: 140,
-                                      padding: EdgeInsets.only(right: 10),
-                                      child: Column(
+                                      padding: const EdgeInsets.only(right: 10),
+                                      child: const Column(
                                         children: [
-                                          const Text(
+                                          Text(
                                             "SEAT NUMBER",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w300,
@@ -204,7 +204,7 @@ class Money extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text("34",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 15))
                                         ],
@@ -212,12 +212,12 @@ class Money extends StatelessWidget {
                                     ),
                                     Expanded(child: Container()),
                                     Container(
-                                      padding: EdgeInsets.only(left: 25),
+                                      padding: const EdgeInsets.only(left: 25),
                                       height: 60,
                                       width: 140,
-                                      child: Column(
+                                      child: const Column(
                                         children: [
-                                          const Text("PRICE",
+                                          Text("PRICE",
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w300,
                                                   fontSize: 11)),
@@ -226,7 +226,7 @@ class Money extends StatelessWidget {
                                           ),
                                           Text(
                                             '45345',
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15,
                                             ),

@@ -39,11 +39,11 @@ class _MyTicketsState extends State<MyTickets> {
               child: Text("My Tickets",style: theme.textTheme.bodyLarge!.copyWith(fontSize: 22)),
             ),
           ),
-          body: SingleChildScrollView(
+          body: const SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                padding: EdgeInsets.only(left: 20,right: 20,top: 20),
                 child: Column(
-                        children: const [
+                        children: [
                 Ticket(),
                 SizedBox(height: 20,),
                 Ticket(),

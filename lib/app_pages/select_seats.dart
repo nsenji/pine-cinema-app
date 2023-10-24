@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pine/app_pages/ticket_confirmation.dart';
+import 'package:pine/custom_widgets/red_button.dart';
 
-import '../Custom_widgets/red_button.dart';
 
 class SelectSeats extends StatefulWidget {
   const SelectSeats({super.key});
@@ -27,7 +27,7 @@ class _SelectSeatsState extends State<SelectSeats> {
           text: 'Continue',
           onpressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => TicketConfirmation()));
+                MaterialPageRoute(builder: (context) => const TicketConfirmation()));
           },
         ),
       ),
