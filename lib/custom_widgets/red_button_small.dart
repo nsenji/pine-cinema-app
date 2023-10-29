@@ -32,10 +32,13 @@ class _ButtonSmallState extends State<ButtonSmall> {
             height: widget.height,
             width: widget.width,
             child: Center(
-                child: Text(
-              widget.text,
-              style: theme.textTheme.labelMedium,
-            ))),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
+                              widget.text,
+                              style: theme.textTheme.labelMedium!.copyWith(fontSize: 15     ),
+                            ),
+                ))),
       ),
     );
   }

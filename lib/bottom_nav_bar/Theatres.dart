@@ -94,12 +94,13 @@ class _TheatresState extends State<Theatres> {
                                 height: 20,
                               ),
                               ButtonSmall(
+                                height: 37,
                                 text: 'Movies Showing',
                                 width: 150,
                                 onpressed: () async {
                                   DateTime? pickedDate = await showDatePicker(
                                       helpText:
-                                          'Select date to show movies available that day',
+                                          'Select date ',
                                           
                                       context: context,
                                       initialDate: DateTime.now(),
