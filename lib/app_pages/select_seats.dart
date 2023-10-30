@@ -66,8 +66,21 @@ class _SelectSeatsState extends State<SelectSeats> {
               Column(
                 children: [
                   SizedBox(
-                    width: 35,
-                  )
+                    height: 85,
+                  ),
+                  for (var i = 0; i < 13; i++)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 4, right: 10,left: 10),
+                      child: SizedBox(
+                        height: 37,
+                        child: Center(
+                          child: Text(
+                            String.fromCharCode(i + 65),
+                            style: const TextStyle(color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
               Column(

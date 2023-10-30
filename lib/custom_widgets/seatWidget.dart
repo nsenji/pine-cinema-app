@@ -62,7 +62,7 @@ class _SeatawidgetState extends State<SeatWidget> {
 
     if (taken.contains(widget.number)) {
       setState(() {
-        color = const Color.fromARGB(255, 255, 185, 209);
+        color = const Color.fromARGB(255, 243, 198, 198);
       });
     } else if (clicked.contains(widget.number)) {
       setState(() {
