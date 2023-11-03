@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pine/custom_widgets/ticket.dart';
+import 'package:pine/common_widgets/ticket.dart';
 
 
 class MyTickets extends StatefulWidget {

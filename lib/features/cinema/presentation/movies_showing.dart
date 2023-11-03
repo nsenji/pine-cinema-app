@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pine/cinema/presentation/cinemaMovieDetails.dart';
-import 'package:pine/custom_widgets/movie_card1_mainWithLabel.dart';
+import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
+import 'package:pine/features/cinema/presentation/cinemaMovieDetails.dart';
 
 
 class MoviesShowing extends StatefulWidget {

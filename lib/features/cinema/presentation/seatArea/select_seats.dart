@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pine/cinema/presentation/seatArea/curvedScreen.dart';
-import 'package:pine/cinema/presentation/seatArea/seatWidget.dart';
-import 'package:pine/cinema/presentation/ticket_confirmation.dart';
-import 'package:pine/custom_widgets/red_button.dart';
+
+import 'package:pine/common_widgets/red_button.dart';
+import 'package:pine/features/cinema/presentation/seatArea/curvedScreen.dart';
+import 'package:pine/features/cinema/presentation/seatArea/seatWidget.dart';
+import 'package:pine/features/cinema/presentation/ticket_confirmation.dart';
 
 class SelectSeats extends StatefulWidget {
   const SelectSeats({super.key});
@@ -21,7 +22,7 @@ class _SelectSeatsState extends State<SelectSeats> {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back)),
+            child: const Icon(Icons.arrow_back)),
         title: Text(
           'Select Seats',
           style: theme.textTheme.bodyLarge!.copyWith(fontSize: 20),
@@ -36,10 +37,10 @@ class _SelectSeatsState extends State<SelectSeats> {
                   width: 13,
                   color: const Color.fromARGB(255, 243, 198, 198),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
-                Text("Taken")
+                const Text("Taken")
               ],
             ),
           ),
@@ -65,7 +66,7 @@ class _SelectSeatsState extends State<SelectSeats> {
             children: [
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 85,
                   ),
                   for (var i = 0; i < 13; i++)
@@ -88,7 +89,7 @@ class _SelectSeatsState extends State<SelectSeats> {
                   CurvedScreen(
                     screenWidth: 600,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Expanded(
@@ -97,7 +98,7 @@ class _SelectSeatsState extends State<SelectSeats> {
                     width: 610,
                     child: GridView.builder(
                         itemCount: 15 * 13,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: 5,
                             mainAxisSpacing: 5,
                             crossAxisCount: 15,
@@ -109,7 +110,7 @@ class _SelectSeatsState extends State<SelectSeats> {
                   )),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 35,
               )
             ],

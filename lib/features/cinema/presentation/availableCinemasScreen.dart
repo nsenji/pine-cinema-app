@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:pine/cinema/data/availableCinemasData.dart';
-import 'package:pine/cinema/presentation/movies_showing.dart';
-import 'package:pine/custom_widgets/movieCard2_withoutLabelBelow.dart';
-import 'package:pine/custom_widgets/red_button_small.dart';
+
+import 'package:pine/common_widgets/movieCard2_withoutLabelBelow.dart';
+import 'package:pine/common_widgets/red_button_small.dart';
+import 'package:pine/features/cinema/data/availableCinemasData.dart';
+import 'package:pine/features/cinema/presentation/movies_showing.dart';
 
 
 

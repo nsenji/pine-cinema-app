@@ -1,9 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pine/custom_widgets/pine_logo.dart';
-import 'package:pine/movies/presentation/InCinema/InCinemasScreen.dart';
-import 'package:pine/movies/presentation/comingSoon/ComingSoonScreen.dart';
-import 'package:pine/movies/presentation/onDemand/OnDemandScreen.dart';
+import 'package:pine/common_widgets/pine_logo.dart';
+import 'package:pine/features/movies/presentation/InCinema/InCinemasScreen.dart';
+import 'package:pine/features/movies/presentation/comingSoon/ComingSoonScreen.dart';
+import 'package:pine/features/movies/presentation/onDemand/OnDemandScreen.dart';
+
 
 
 

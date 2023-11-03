@@ -5,7 +5,7 @@ class CurvedScreen extends StatelessWidget {
   // final ScrollController screenScrollController;
   final double screenWidth;
 
-  const CurvedScreen({
+  const CurvedScreen({super.key, 
     // required this.screenScrollController,
     required this.screenWidth,
   });

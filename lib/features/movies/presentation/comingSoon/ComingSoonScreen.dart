@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pine/movies/presentation/comingSoon/movie_card_comingSoon.dart';
+import 'package:pine/features/movies/presentation/comingSoon/movie_card_comingSoon.dart';
 
 
 class ComingSoon extends StatefulWidget {

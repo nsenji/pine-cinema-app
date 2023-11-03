@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pine/cinema/presentation/availableCinemasScreen.dart';
-import 'package:pine/movies/presentation/movieStatusTabs.dart';
-import 'package:pine/myTickets/presentation/myTicketsScreen.dart';
-import 'package:pine/navBar/navBar_icons.dart';
-import 'package:pine/profile/presentation/profileScreen.dart';
+import 'package:pine/features/cinema/presentation/availableCinemasScreen.dart';
+import 'package:pine/features/movies/presentation/movieStatusTabs.dart';
+import 'package:pine/features/myTickets/presentation/myTicketsScreen.dart';
+import 'package:pine/features/navBar/navBar_icons.dart';
+import 'package:pine/features/profile/presentation/profileScreen.dart';
 
 
 class NavBar extends StatefulWidget {

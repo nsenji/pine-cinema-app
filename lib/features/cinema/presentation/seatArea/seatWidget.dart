@@ -66,7 +66,7 @@ class _SeatawidgetState extends State<SeatWidget> {
       });
     } else if (clicked.contains(widget.number)) {
       setState(() {
-        color = Color(0xFFEF5B6B);
+        color = const Color(0xFFEF5B6B);
       });
     }else{
       setState(() {
@@ -82,7 +82,7 @@ class _SeatawidgetState extends State<SeatWidget> {
       child: Center(
           child: Text(
         widget.number,
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black),
       )),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pine/profile/presentation/avatar.dart';
+import 'package:pine/features/profile/presentation/avatar.dart';
 
 
 class Profile extends StatefulWidget {
