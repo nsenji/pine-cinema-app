@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pine/custom_widgets/ticket.dart';
 
-import '../custom_widgets/ticket.dart';
 
 class MyTickets extends StatefulWidget {
   const MyTickets({Key? key}) : super(key: key);

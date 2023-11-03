@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pine/movies/presentation/comingSoon/movie_card_comingSoon.dart';
 
-import '../custom_widgets/movie_card_comingSoon.dart';
 
 class ComingSoon extends StatefulWidget {
   const ComingSoon({super.key});

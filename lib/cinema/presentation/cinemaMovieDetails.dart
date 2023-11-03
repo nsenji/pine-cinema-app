@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pine/custom_widgets/movieCard2.dart';
+import 'package:pine/cinema/presentation/seatArea/select_seats.dart';
+import 'package:pine/custom_widgets/cast_and_crew_avatar.dart';
+import 'package:pine/custom_widgets/movieCard2_withoutLabelBelow.dart';
 import 'package:pine/custom_widgets/red_button.dart';
 
-import '../../custom_widgets/cast_and_crew_card.dart';
 import '../../custom_widgets/time_chip.dart';
-import '../select_seats.dart';
 
 class InCinemaDetailsShowing extends StatefulWidget {
   const InCinemaDetailsShowing({super.key});

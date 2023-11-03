@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pine/profile/presentation/avatar.dart';
 
-import '../custom_widgets/avatar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

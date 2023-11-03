@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pine/custom_widgets/pine_logo.dart';
+import 'package:pine/movies/presentation/InCinema/InCinemasScreen.dart';
+import 'package:pine/movies/presentation/comingSoon/ComingSoonScreen.dart';
+import 'package:pine/movies/presentation/onDemand/OnDemandScreen.dart';
 
-import '../tabBar_pages/ComingSoon.dart';
-import '../tabBar_pages/InCinemas.dart';
-import '../tabBar_pages/OnDemand.dart';
+
 
 class Movies extends StatefulWidget {
   const Movies({super.key});

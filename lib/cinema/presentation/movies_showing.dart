@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pine/app_pages/details_pages/inCinema_details_showing.dart';
+import 'package:pine/cinema/presentation/cinemaMovieDetails.dart';
+import 'package:pine/custom_widgets/movie_card1_mainWithLabel.dart';
 
-import '../custom_widgets/movie_card1.dart';
 
 class MoviesShowing extends StatefulWidget {
   final showDate;

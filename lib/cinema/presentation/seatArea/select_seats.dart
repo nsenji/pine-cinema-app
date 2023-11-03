@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pine/app_pages/ticket_confirmation.dart';
+import 'package:pine/cinema/presentation/seatArea/curvedScreen.dart';
+import 'package:pine/cinema/presentation/seatArea/seatWidget.dart';
+import 'package:pine/cinema/presentation/ticket_confirmation.dart';
 import 'package:pine/custom_widgets/red_button.dart';
-import 'package:pine/custom_widgets/seatWidget.dart';
-import 'package:pine/fromAbdul/curvedScreen.dart';
 
 class SelectSeats extends StatefulWidget {
   const SelectSeats({super.key});

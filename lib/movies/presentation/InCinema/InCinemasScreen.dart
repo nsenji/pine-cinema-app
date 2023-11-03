@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pine/custom_widgets/movie_card1_mainWithLabel.dart';
 
-import '../custom_widgets/movie_card1.dart';
 
 class InCinemas extends StatefulWidget {
   const InCinemas({super.key});

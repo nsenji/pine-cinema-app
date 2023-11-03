@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pine/app_pages/movies_showing.dart';
 import 'package:intl/intl.dart';
+import 'package:pine/cinema/data/availableCinemasData.dart';
+import 'package:pine/cinema/presentation/movies_showing.dart';
+import 'package:pine/custom_widgets/movieCard2_withoutLabelBelow.dart';
+import 'package:pine/custom_widgets/red_button_small.dart';
 
-import '../custom_widgets/cinemas_details_map.dart';
-import '../custom_widgets/movieCard2.dart';
-import '../custom_widgets/red_button_small.dart';
+
 
 class Theatres extends StatefulWidget {
   const Theatres({super.key});

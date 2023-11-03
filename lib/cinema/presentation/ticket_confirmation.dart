@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pine/custom_widgets/red_button.dart';
 
 
-import '../custom_widgets/ticket_view.dart';
 
 class TicketConfirmation extends StatefulWidget {
   const TicketConfirmation({super.key});
@@ -38,7 +37,7 @@ class _TicketConfirmationState extends State<TicketConfirmation> {
           padding: EdgeInsets.only(left: 30,right: 30,top: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [TicketView()],
+            children: [],
           ),
         ),
       ),

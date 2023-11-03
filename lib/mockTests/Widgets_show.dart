@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pine/custom_widgets/cast_and_crew_avatar.dart';
 import 'package:pine/custom_widgets/filter_chip.dart';
+import 'package:pine/custom_widgets/movieCard2_withoutLabelBelow.dart';
 import 'package:pine/custom_widgets/pine_logo.dart';
 import 'package:pine/custom_widgets/red_button.dart';
 
 
-import '../custom_widgets/cast_and_crew_card.dart';
-import '../custom_widgets/movieCard2.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
