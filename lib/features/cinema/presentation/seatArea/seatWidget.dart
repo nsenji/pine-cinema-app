@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class SeatWidget extends StatefulWidget {
   final String number;
-  const SeatWidget({super.key, required this.number});
+  final String rowLetter;
+  const SeatWidget({super.key, required this.number, this.rowLetter = ''});
 
   @override
   State<SeatWidget> createState() => _SeatawidgetState();

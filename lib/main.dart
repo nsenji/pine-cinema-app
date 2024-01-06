@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pine/features/cinema/presentation/seatArea/select_seats.dart';
 import 'package:pine/features/navBar/nav_bar.dart';
 import 'package:pine/utils/custom_theme.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkThemeData(context),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const NavBar(),
+      home: const SelectSeats(),
     );
   }
 }
