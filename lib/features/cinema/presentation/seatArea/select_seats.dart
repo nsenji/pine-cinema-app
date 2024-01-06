@@ -60,29 +60,36 @@ class _SelectSeatsState extends State<SelectSeats> {
       ),
       body: Center(
         child: SingleChildScrollView(
+          
           scrollDirection: Axis.horizontal,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 85,
-                  ),
-                  for (var i = 0; i < 13; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 4, right: 10,left: 10),
-                      child: SizedBox(
-                        height: 37,
-                        child: Center(
-                          child: Text(
-                            String.fromCharCode(i + 65),
-                            style: const TextStyle(color: Colors.black),
+              Padding(
+                  padding: const EdgeInsets.only(top: 85),
+                child: SingleChildScrollView(
+                  child: 
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      
+                      for (var i = 0; i < 13; i++)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 4, right: 10,left: 10),
+                          child: SizedBox(
+                            height: 37,
+                            child: Center(
+                              child: Text(
+                                String.fromCharCode(i + 65),
+                                style: const TextStyle(color: Colors.black),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                ],
+                    ],
+                  ),
+                ),
               ),
               Column(
                 children: [
