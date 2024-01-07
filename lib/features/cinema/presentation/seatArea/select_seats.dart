@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pine/common_widgets/red_button.dart';
+import 'package:pine/features/cinema/domain/seat.dart';
 import 'package:pine/features/cinema/presentation/seatArea/curvedScreen.dart';
 import 'package:pine/features/cinema/presentation/seatArea/seatWidget.dart';
 import 'package:pine/features/cinema/presentation/ticket_confirmation.dart';
@@ -13,6 +14,22 @@ class SelectSeats extends StatefulWidget {
 }
 
 class _SelectSeatsState extends State<SelectSeats> {
+  /// function to generate the row where the seat is located
+  String getRowLetter(int seatNumber) {
+    int columns = 15;
+
+    // Calculate the row number
+    int rowNumber = seatNumber ~/ columns;
+    if (seatNumber % columns != 0) {
+      rowNumber++;
+    }
+
+    // Convert row number to corresponding letter
+    String rowLetter = String.fromCharCode('A'.codeUnitAt(0) + rowNumber - 1);
+
+    return rowLetter;
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -60,23 +77,21 @@ class _SelectSeatsState extends State<SelectSeats> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          
           scrollDirection: Axis.horizontal,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                  padding: const EdgeInsets.only(top: 85),
+                padding: const EdgeInsets.only(top: 85),
                 child: SingleChildScrollView(
-                  child: 
-                  Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      
                       for (var i = 0; i < 13; i++)
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 4, right: 10,left: 10),
+                          padding: const EdgeInsets.only(
+                              bottom: 4, right: 10, left: 10),
                           child: SizedBox(
                             height: 37,
                             child: Center(
@@ -105,14 +120,19 @@ class _SelectSeatsState extends State<SelectSeats> {
                     width: 610,
                     child: GridView.builder(
                         itemCount: 15 * 13,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 5,
-                            crossAxisCount: 15,
-                            childAspectRatio: 1),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisSpacing: 5,
+                                mainAxisSpacing: 5,
+                                crossAxisCount: 15,
+                                childAspectRatio: 1),
                         itemBuilder: (context, index) {
-                          final String seatNumber = (index + 1).toString();
-                          return SeatWidget(number: seatNumber);
+                          final int seatNumber = (index + 1);
+                          return SeatWidget(
+                            seat: Seat(
+                                seatNumber: seatNumber,
+                                rowLetter: getRowLetter(seatNumber)),
+                          );
                         }),
                   )),
                 ],

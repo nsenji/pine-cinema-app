@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pine/features/cinema/domain/seat.dart';
 
 class SeatWidget extends StatefulWidget {
-  final String number;
-  final String rowLetter;
-  const SeatWidget({super.key, required this.number, this.rowLetter = ''});
+  final Seat seat;
+  const SeatWidget({super.key, required this.seat});
 
   @override
   State<SeatWidget> createState() => _SeatawidgetState();
@@ -61,11 +61,11 @@ class _SeatawidgetState extends State<SeatWidget> {
       "15"
     ];
 
-    if (taken.contains(widget.number)) {
+    if (taken.contains(widget.seat.seatNumber.toString())) {
       setState(() {
         color = const Color.fromARGB(255, 243, 198, 198);
       });
-    } else if (clicked.contains(widget.number)) {
+    } else if (clicked.contains(widget.seat.seatNumber.toString())) {
       setState(() {
         color = const Color(0xFFEF5B6B);
       });
@@ -82,7 +82,7 @@ class _SeatawidgetState extends State<SeatWidget> {
           color: color, borderRadius: BorderRadius.circular(4)),
       child: Center(
           child: Text(
-        widget.number,
+        widget.seat.seatNumber.toString(),
         style: const TextStyle(color: Colors.black),
       )),
     );
