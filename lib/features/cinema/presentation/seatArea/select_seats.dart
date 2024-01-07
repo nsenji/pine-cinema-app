@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pine/common_widgets/red_button.dart';
+import 'package:pine/features/cinema/data/seat_states.dart';
 import 'package:pine/features/cinema/domain/seat.dart';
 import 'package:pine/features/cinema/presentation/seatArea/curvedScreen.dart';
 import 'package:pine/features/cinema/presentation/seatArea/seatWidget.dart';
@@ -130,6 +131,8 @@ class _SelectSeatsState extends State<SelectSeats> {
                           final int seatNumber = (index + 1);
                           return SeatWidget(
                             seat: Seat(
+                              // TODO: instead of using the taken list use the stream of taken seats
+                                taken: taken.contains(seatNumber.toString())? true:false,
                                 seatNumber: seatNumber,
                                 rowLetter: getRowLetter(seatNumber)),
                           );
