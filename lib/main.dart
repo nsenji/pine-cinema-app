@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkThemeData(context),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const SelectSeats(),
+      home: const NavBar(),
     );
   }
 }
