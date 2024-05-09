@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/common_widgets/filter_chip.dart';
+import 'package:pine/common_widgets/get_genre_from_list.dart';
 import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/common_widgets/search_widget.dart';
+import 'package:pine/features/movies/controllers/filter_state.dart';
 import 'package:pine/features/movies/controllers/most_popular_state.dart';
 import 'package:pine/features/movies/data/list_of_movies.dart';
 
@@ -29,25 +31,38 @@ class _OnDemandState extends ConsumerState<OnDemand> {
         .setMovieList(searchResultList as List<Map>);
   }
 
+  void _addToFilterResult(String value, List currentMovieState,
+      FilterStateController filterStateController) {
+    List filterResultList = currentMovieState
+        .where((element) => getGenre(element['Genre'])
+            .toString()
+            .toLowerCase()
+            .contains(value.toLowerCase()))
+        .toList();
+
+    filterStateController.setList(filterResultList as List<Map>);
+  }
+
+  void _removeFromFilterResult(String value, List currentMovieState,
+      FilterStateController filterStateController) {
+    List filterResultList = currentMovieState
+        .where((element) => getGenre(element['Genre'])
+            .toString()
+            .toLowerCase()
+            .contains(value.toLowerCase()))
+        .toList();
+
+    filterStateController.removeList(filterResultList as List<Map>);
+  }
+
   final TextEditingController _searchContoller = TextEditingController();
 
-  List<String> categories = [
-    'All',
-    'Action',
-    'Horror',
-    'Animation',
-    'Sci-fi',
-    'Comedy',
-    'Drama',
-    'Documentary',
-    'Adventure',
-    'Romance',
-    'Nolan'
-  ];
   @override
   Widget build(BuildContext context) {
     List<Map> popularMoviesState = ref.watch(stateOfMoviesProvider);
     var popularMoviesController = ref.read(stateOfMoviesProvider.notifier);
+    var stateFilterController = ref.read(filterStateProvider.notifier);
+
     var theme = Theme.of(context);
     return Scaffold(
       body: Column(
@@ -76,11 +91,20 @@ class _OnDemandState extends ConsumerState<OnDemand> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: categories.map(
-                (value) {
+              children: genres.map(
+                (chipValue) {
                   return Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: ChipFilter(label: value, onpressed: () {}),
+                    child: ChipFilter(
+                        label: chipValue,
+                        onpressed: (boolState) {
+                          if (boolState) {
+                            _addToFilterResult(
+                                chipValue, movies, stateFilterController);
+                          } else {
+                            _removeFromFilterResult(chipValue, movies, stateFilterController);
+                          }
+                        }),
                   );
                 },
               ).toList(),

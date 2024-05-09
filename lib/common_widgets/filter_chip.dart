@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ChipFilter extends StatefulWidget {
   final String label;
-  final VoidCallback onpressed;
+  final Function(bool) onpressed;
 
   const ChipFilter({super.key, required this.label, required this.onpressed});
 
@@ -22,11 +22,11 @@ class _ChipFilterState extends State<ChipFilter> {
       selectedColor: theme.primaryColor,
       selected: isSelected,
       label: Text(widget.label),
-      onSelected: (bool) {
+      onSelected: (value) {
         setState(() {
           isSelected = !isSelected;
         });
-        widget.onpressed;
+        widget.onpressed(isSelected);
       },
     );
   }

@@ -1,3 +1,28 @@
+List nullCast = [
+  "N/A",
+  "N/A",
+  "N/A",
+  "N/A",
+  "N/A",
+];
+
+List<String> genres = [
+  'Crime',
+  'Thriller',
+  'Action',
+  'Horror',
+  'Animation',
+  'Sci-fi',
+  'Comedy',
+  'Drama',
+  'Family',
+  'Fantasy',
+  'Romance',
+  'Mystery',
+  'Western',
+  'Telenovela'
+];
+
 List<Map> movies = [
   {
     "Release_Date": "15/12/2021",
@@ -5,7 +30,7 @@ List<Map> movies = [
     "Overview":
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
     "Vote_Average": 8.3,
-    "Genre": "Action, Adventure, Science Fiction",
+    "Genre": "Action, Adventure, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
     "cast": [
@@ -152,7 +177,7 @@ List<Map> movies = [
     "Overview":
         "The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years. When an unexpected tragedy forces them out of the shadows, they are forced to reunite against mankind’s most ancient enemy, the Deviants.",
     "Vote_Average": 7.2,
-    "Genre": "Science Fiction",
+    "Genre": "Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/zByhtBvX99ZiCQhac1sh9d9r6nb.jpg"
   },
@@ -282,7 +307,7 @@ List<Map> movies = [
     "Overview":
         "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
     "Vote_Average": 7.1,
-    "Genre": "Science Fiction, Action, Adventure",
+    "Genre": "Sci-fi, Action, Adventure",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg"
   },
@@ -292,7 +317,7 @@ List<Map> movies = [
     "Overview":
         "Plagued by strange memories, Neo's life takes an unexpected turn when he finds himself back inside the Matrix.",
     "Vote_Average": 6.8,
-    "Genre": "Science Fiction, Action, Adventure",
+    "Genre": "Sci-fi, Action, Adventure",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/8c4a8kE7PizaGQQnditMmI1xbRp.jpg"
   },
@@ -302,7 +327,7 @@ List<Map> movies = [
     "Overview":
         "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town. The company’s exodus left the city a wasteland…with great evil brewing below the surface. When that evil is unleashed, the townspeople are forever…changed…and a small group of survivors must work together to uncover the truth behind Umbrella and make it through the night.",
     "Vote_Average": 6.1,
-    "Genre": "Horror, Action, Science Fiction",
+    "Genre": "Horror, Action, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/7uRbWOXxpWDMtnsd2PF3clu65jc.jpg"
   },
@@ -542,7 +567,7 @@ List<Map> movies = [
     "Overview":
         "In a world where walking, talking, digitally connected bots have become children's best friends, an 11-year-old finds that his robot buddy doesn't quite work the same as the others do.",
     "Vote_Average": 8.1,
-    "Genre": "Animation, Science Fiction, Family, Comedy",
+    "Genre": "Animation, Sci-fi, Family, Comedy",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/7M0uwPgwvPONdFG0jk8TPK09xJU.jpg"
   },
@@ -552,7 +577,7 @@ List<Map> movies = [
     "Overview":
         "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
     "Vote_Average": 7.7,
-    "Genre": "Comedy, Action, Adventure, Science Fiction",
+    "Genre": "Comedy, Action, Adventure, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg"
   },
@@ -622,7 +647,7 @@ List<Map> movies = [
     "Overview":
         "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
     "Vote_Average": 8.3,
-    "Genre": "Action, Adventure, Fantasy, Science Fiction",
+    "Genre": "Action, Adventure, Fantasy, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg"
   },
@@ -632,7 +657,7 @@ List<Map> movies = [
     "Overview":
         "Georgia and her boyfriend Sam go on a treacherous journey to escape their country, which is caught in an unexpected war with artificial intelligence. Days away from the arrival of their first child, the couple must face No Man’s Land—a stronghold of the android uprising—in hopes of reaching safety before giving birth.",
     "Vote_Average": 5.8,
-    "Genre": "Science Fiction, Thriller",
+    "Genre": "Sci-fi, Thriller",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/rO3nV9d1wzHEWsC7xgwxotjZQpM.jpg"
   },
@@ -652,7 +677,7 @@ List<Map> movies = [
     "Overview":
         "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
     "Vote_Average": 7.9,
-    "Genre": "Science Fiction, Adventure",
+    "Genre": "Sci-fi, Adventure",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
   },
@@ -742,7 +767,7 @@ List<Map> movies = [
     "Overview":
         "On a post-apocalyptic Earth, a robot, built to protect the life of his dying creator's beloved dog, learns about life, love, friendship, and what it means to be human.",
     "Vote_Average": 8.1,
-    "Genre": "Science Fiction, Drama, Adventure",
+    "Genre": "Sci-fi, Drama, Adventure",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/jKuDyqx7jrjiR9cDzB5pxzhJAdv.jpg"
   },
@@ -772,7 +797,7 @@ List<Map> movies = [
     "Overview":
         "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
     "Vote_Average": 8.3,
-    "Genre": "Adventure, Action, Science Fiction",
+    "Genre": "Adventure, Action, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
   },
@@ -792,7 +817,7 @@ List<Map> movies = [
     "Overview":
         "Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy and the broken relationships left in her wake long before she became an Avenger.",
     "Vote_Average": 7.5,
-    "Genre": "Action, Adventure, Science Fiction",
+    "Genre": "Action, Adventure, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg"
   },
@@ -822,7 +847,7 @@ List<Map> movies = [
     "Overview":
         "A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.",
     "Vote_Average": 5.9,
-    "Genre": "Action, Adventure, Science Fiction",
+    "Genre": "Action, Adventure, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg"
   },
@@ -852,7 +877,7 @@ List<Map> movies = [
     "Overview":
         "A modern love story set in the near future where an AI building is powered by human feelings. Due to a software glitch, it falls in love with a real girl, escapes the building into the body of a real man, and tries to win her affections.",
     "Vote_Average": 5.3,
-    "Genre": "Comedy, Romance, Science Fiction",
+    "Genre": "Comedy, Romance, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/sBiJOvHCSWORnFpc4yItflIkdTi.jpg"
   },
@@ -862,7 +887,7 @@ List<Map> movies = [
     "Overview":
         "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
     "Vote_Average": 0,
-    "Genre": "Action, Science Fiction, Comedy, Family",
+    "Genre": "Action, Sci-fi, Comedy, Family",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
   },
@@ -882,7 +907,7 @@ List<Map> movies = [
     "Overview":
         "The assassin Deathstroke tries to save his family from the wrath of H.I.V.E. and the murderous Jackal.",
     "Vote_Average": 6.9,
-    "Genre": "Animation, Action, Adventure, Science Fiction",
+    "Genre": "Animation, Action, Adventure, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/vFIHbiy55smzi50RmF8LQjmpGcx.jpg"
   },
@@ -952,7 +977,7 @@ List<Map> movies = [
     "Overview":
         "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
     "Vote_Average": 7.8,
-    "Genre": "Action, Fantasy, Science Fiction",
+    "Genre": "Action, Fantasy, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg"
   },
@@ -982,7 +1007,7 @@ List<Map> movies = [
     "Overview":
         "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
     "Vote_Average": 7.5,
-    "Genre": "Action, Adventure, Fantasy, Science Fiction",
+    "Genre": "Action, Adventure, Fantasy, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg"
   },
@@ -992,7 +1017,7 @@ List<Map> movies = [
     "Overview":
         "After Char's rebellion, Hathaway Noa leads an insurgency against Earth Federation, but meeting an enemy officer and a mysterious woman alters his fate.",
     "Vote_Average": 7.8,
-    "Genre": "Animation, Action, Drama, Science Fiction",
+    "Genre": "Animation, Action, Drama, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/6gw8onh4FKsruBA7Oouv01EFxzn.jpg"
   },
@@ -1052,7 +1077,7 @@ List<Map> movies = [
     "Overview":
         "The world is stunned when a group of time travelers arrive from the year 2051 to deliver an urgent message: Thirty years in the future, mankind is losing a global war against a deadly alien species. The only hope for survival is for soldiers and civilians from the present to be transported to the future and join the fight. Among those recruited is high school teacher and family man Dan Forester. Determined to save the world for his young daughter, Dan teams up with a brilliant scientist and his estranged father in a desperate quest to rewrite the fate of the planet.",
     "Vote_Average": 8,
-    "Genre": "Action, Science Fiction, Adventure",
+    "Genre": "Action, Sci-fi, Adventure",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg"
   },
@@ -1092,7 +1117,7 @@ List<Map> movies = [
     "Overview":
         "Evan McCauley has skills he never learned and memories of places he has never visited. Self-medicated and on the brink of a mental breakdown, a secret group that call themselves “Infinites” come to his rescue, revealing that his memories are real.",
     "Vote_Average": 6.8,
-    "Genre": "Science Fiction, Action, Thriller",
+    "Genre": "Sci-fi, Action, Thriller",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/niw2AKHz6XmwiRMLWaoyAOAti0G.jpg"
   },
@@ -1122,7 +1147,7 @@ List<Map> movies = [
     "Overview":
         "When LeBron and his young son Dom are trapped in a digital space by a rogue A.I., LeBron must get them home safe by leading Bugs, Lola Bunny and the whole gang of notoriously undisciplined Looney Tunes to victory over the A.I.'s digitized champions on the court. It's Tunes versus Goons in the highest-stakes challenge of his life.",
     "Vote_Average": 7.1,
-    "Genre": "Family, Animation, Comedy, Science Fiction",
+    "Genre": "Family, Animation, Comedy, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/5bFK5d3mVTAvBCXi5NPWH0tYjKl.jpg"
   },
@@ -1132,7 +1157,7 @@ List<Map> movies = [
     "Overview":
         "After years of leave, Laura Lebrel returns to action. Lydia asks him for help on a case: Eugenio Ortiz, Laura's former instructor, has been murdered. But a new detective, Hector, finds evidence that incriminates Laura. She asks to be allowed to find the killer and Lydia gives her 24 hours to solve the case before arresting her.",
     "Vote_Average": 7.3,
-    "Genre": "TV Movie, Mystery, Thriller, Comedy",
+    "Genre": "Telenovela, Mystery, Thriller, Comedy",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/p6T9g5a227cUs4rlTlaxo8QAqIf.jpg"
   },
@@ -1182,7 +1207,7 @@ List<Map> movies = [
     "Overview":
         "Jennifer Dulos, the wealthy, Connecticut mother-of-five who mysteriously vanished.",
     "Vote_Average": 7.8,
-    "Genre": "TV Movie, Thriller, Crime",
+    "Genre": "Telenovela, Thriller, Crime",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/mzTNGnLG6LTHmrqrY0IADHDuyOJ.jpg"
   },
@@ -1202,7 +1227,7 @@ List<Map> movies = [
     "Overview":
         "After getting a car ride from an unknown man, Lisa wakes up in a tube. On her arm is strapped a bracelet with a countdown. She quickly understands that every 8 minutes, fire burns an occupied section. She has no choice but to crawl into safe sections to survive. To know why she’s there and how to get out, Lisa will have to face the memories of her dead daughter…",
     "Vote_Average": 6.1,
-    "Genre": "Horror, Science Fiction, Drama, Thriller",
+    "Genre": "Horror, Sci-fi, Drama, Thriller",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/2OTIAx8AmwGCaXmq5ohQCyPUjdC.jpg"
   },
@@ -1252,7 +1277,7 @@ List<Map> movies = [
     "Overview":
         "Ex-cop Thomas Malone is serving a life sentence for a crime he didn’t commit. He is offered a chance at freedom if he can survive a deadly game of Apex, in which six hunters pay for the pleasure of hunting another human on a remote island. He accepts, and once he arrives, all hell breaks loose.",
     "Vote_Average": 5.4,
-    "Genre": "Action, Thriller, Science Fiction",
+    "Genre": "Action, Thriller, Sci-fi",
     "Poster_Url":
         "https://image.tmdb.org/t/p/original/chTkFGToW5bsyw3hgLAe4S5Gt3.jpg"
   },
@@ -1422,12 +1447,4 @@ List moviesInCinema = [
         "https://image.tmdb.org/t/p/original/3cccEF9QZgV9bLWyupJO41HSrOV.jpg",
     "cast": ["Iko Uwais", "Lewis Tan", "Jessica Henwick", "Wu Jing", "Nancy Wu"]
   },
-];
-
-List nullCast = [
-  "N/A",
-  "N/A",
-  "N/A",
-  "N/A",
-  "N/A",
 ];

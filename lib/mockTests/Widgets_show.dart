@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
-import 'package:pine/common_widgets/filter_chip.dart';
 import 'package:pine/common_widgets/movieCard2_withoutLabelBelow.dart';
 import 'package:pine/common_widgets/pine_logo.dart';
 import 'package:pine/common_widgets/red_button.dart';
@@ -36,15 +35,15 @@ class _MyWidgetState extends State<MyWidget> {
               const SizedBox(
                 height: 30,
               ),
-              ChipFilter(
-                label: 'Abomination',
-                onpressed: () {
+              // ChipFilter(
+              //   label: 'Abomination',
+              //   onpressed: () {
                  
 
-                },
+              //   },
                 
-              )
-              , const SizedBox(
+              // )
+               const SizedBox(
                     height: 30,
                   )
                   ,const MovieCard2(image: 'assets/images/nsenji.png',)
