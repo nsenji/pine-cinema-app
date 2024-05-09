@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
+import 'package:pine/common_widgets/get_genre_from_list.dart';
 import 'package:pine/common_widgets/movieCard2_withoutLabelBelow.dart';
 import 'package:pine/common_widgets/red_button.dart';
 import 'package:pine/common_widgets/time_chip.dart';
 import 'package:pine/features/cinema/presentation/seatArea/select_seats.dart';
+import 'package:pine/features/movies/data/list_of_movies.dart';
 
-
-class InCinemaDetailsShowing extends StatefulWidget {
-  const InCinemaDetailsShowing({super.key});
+class MovieDetails extends StatefulWidget {
+  final Map movie;
+  const MovieDetails({super.key, required this.movie});
 
   @override
-  State<InCinemaDetailsShowing> createState() => _InCinemaDetailsShowingState();
+  State<MovieDetails> createState() => _InCinemaDetailsShowingState();
 }
 
-class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
+class _InCinemaDetailsShowingState extends State<MovieDetails> {
   List<String> images = [
     'korea.jpg',
     'thanos.jpg',
@@ -25,9 +27,11 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
   var maxlines = true;
   @override
   Widget build(BuildContext context) {
+    List? castList = widget.movie["cast"];
+
     var theme = Theme.of(context);
     var screenHeight = MediaQuery.of(context).size.height;
-    var stackHeight = screenHeight * 0.35;
+    var stackHeight = screenHeight * 0.48;
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: Padding(
@@ -101,7 +105,8 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const SelectSeats()));
+                                        builder: (context) =>
+                                            const SelectSeats()));
                               })
                         ],
                       ),
@@ -136,18 +141,31 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: stackHeight * 0.29,
-                      child: Image.asset(
-                        'assets/images/avatar.jpg',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: stackHeight * 0.20,
+                        child: Image.network(
+                          widget.movie["Poster_Url"],
+                          fit: BoxFit.cover,
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: LinearProgressIndicator(
+                                color: Color(0xFFEF5B6B),
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            );
+                          },
+                        )),
                     Positioned(
                         bottom: 0,
-                        top: (stackHeight) - stackHeight * 0.29,
+                        top: (stackHeight) - stackHeight * 0.20,
                         left: 0,
                         right: 0,
                         child: Padding(
@@ -156,9 +174,10 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                               alignment: Alignment.centerRight,
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'WU-TANG: AN american Saga',
+                                    widget.movie["Title"],
                                     style: theme.textTheme.bodyLarge!
                                         .copyWith(fontSize: 18),
                                     overflow: TextOverflow.ellipsis,
@@ -189,10 +208,10 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                                 ],
                               )),
                         )),
-                    const Positioned(
+                    Positioned(
                         bottom: 0,
                         left: 20,
-                        child: MovieCard2(image: 'assets/images/avatar.jpg'))
+                        child: MovieCard2(image: widget.movie["Poster_Url"]))
                   ],
                 ),
               ),
@@ -204,7 +223,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                       height: 10,
                     ),
                     Text(
-                      'In a world on the brink of chaos, a courageous team of scientists embarks on a perilous mission to save humanity. They must race against time to find the ancient artifact that holds the key to restoring balance and preventing the ultimate catastrophe. As they journey through treacherous landscapes and encounter mysterious beings, their determination and resilience are put to the test. This epic adventure will keep you on the edge of your seat, blending heart-pounding action with thought-provoking themes. Get ready for a thrilling cinematic experience like no other!',
+                      widget.movie["Overview"],
                       style: theme.textTheme.bodyMedium,
                       maxLines: maxlines ? 3 : null,
                       overflow: maxlines ? TextOverflow.ellipsis : null,
@@ -257,7 +276,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              '8.3',
+                              widget.movie["Vote_Average"].toString(),
                               style: theme.textTheme.bodyMedium!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
@@ -270,7 +289,7 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              'Adventure',
+                              getGenre(widget.movie["Genre"]),
                               style: theme.textTheme.bodyMedium!
                                   .copyWith(fontWeight: FontWeight.bold),
                             ),
@@ -322,78 +341,65 @@ class _InCinemaDetailsShowingState extends State<InCinemaDetailsShowing> {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        children: [
-                          ...images
-                              .map((image) => Padding(
-                                    padding: const EdgeInsets.only(right: 20),
-                                    child: Column(
-                                      children: [
-                                        CastAndCrewCard(
-                                          image: 'assets/images/$image',
-                                        ),
-                                        const SizedBox(
-                                          height: 6,
-                                        ),
-                                        SizedBox(
-                                            width: 70,
-                                            child: Text(
-                                              'Leornaldo decaprio',
-                                              style: theme.textTheme.bodyMedium!
-                                                  .copyWith(fontSize: 13),
-                                              textAlign: TextAlign.center,
-                                            ))
-                                      ],
-                                    ),
-                                  ))
-                              .toList()
-                        ],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: castList == null
+                            ? nullCast
+                                .map((name) => Padding(
+                                      padding: const EdgeInsets.only(right: 20),
+                                      child: Column(
+                                        children: [
+                                          CastAndCrewCard(
+                                            image:
+                                                'assets/images/placeholder.jpg',
+                                          ),
+                                          const SizedBox(
+                                            height: 6,
+                                          ),
+                                          SizedBox(
+                                              width: 70,
+                                              child: Text(
+                                                name,
+                                                style: theme
+                                                    .textTheme.bodyMedium!
+                                                    .copyWith(fontSize: 13),
+                                                textAlign: TextAlign.center,
+                                              ))
+                                        ],
+                                      ),
+                                    ))
+                                .toList()
+                            : castList
+                                .map((name) => Padding(
+                                      padding: const EdgeInsets.only(right: 20),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          CastAndCrewCard(
+                                            image:
+                                                'assets/images/placeholder.jpg',
+                                          ),
+                                          const SizedBox(
+                                            height: 6,
+                                          ),
+                                          SizedBox(
+                                              width: 70,
+                                              child: Text(
+                                                name,
+                                                style: theme
+                                                    .textTheme.bodyMedium!
+                                                    .copyWith(fontSize: 13),
+                                                textAlign: TextAlign.center,
+                                              ))
+                                        ],
+                                      ),
+                                    ))
+                                .toList(),
                       ),
                     ),
                     const SizedBox(
                       height: 30,
                     ),
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Crew',
-                          style: theme.textTheme.bodyLarge,
-                        )),
-                    const SizedBox(
-                      height: 13,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          ...images
-                              .map((image) => Padding(
-                                    padding: const EdgeInsets.only(right: 20),
-                                    child: Column(
-                                      children: [
-                                        CastAndCrewCard(
-                                          image: 'assets/images/$image',
-                                        ),
-                                        const SizedBox(
-                                          height: 6,
-                                        ),
-                                        SizedBox(
-                                            width: 70,
-                                            child: Text(
-                                              'Leornaldo decaprio',
-                                              style: theme.textTheme.bodyMedium!
-                                                  .copyWith(fontSize: 13),
-                                              textAlign: TextAlign.center,
-                                            ))
-                                      ],
-                                    ),
-                                  ))
-                              .toList()
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    )
                   ],
                 ),
               ),

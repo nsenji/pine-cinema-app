@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pine/features/cinema/presentation/MovieDetails.dart';
 
 class MovieCard1 extends StatelessWidget {
   final Map movieDetails;
@@ -7,47 +8,53 @@ class MovieCard1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return SizedBox(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisSize: MainAxisSize.max,
-        children: [
-          Expanded(
-            child: Card(
-              elevation: 2,
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Image.network(
-                   movieDetails["Poster_Url"],
-                    fit: BoxFit.cover,
-                    loadingBuilder: (BuildContext context, Widget child,
-                        ImageChunkEvent? loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: LinearProgressIndicator(
-                          color: Color(0xFFEF5B6B),
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                              : null,
-                        ),
-                      );
-                    },
-                  )),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) =>  MovieDetails(movie: movieDetails)));
+      },
+      child: SizedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+              child: Card(
+                elevation: 2,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.network(
+                      movieDetails["Poster_Url"],
+                      fit: BoxFit.cover,
+                      loadingBuilder: (BuildContext context, Widget child,
+                          ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: LinearProgressIndicator(
+                            color: Color(0xFFEF5B6B),
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                    loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        );
+                      },
+                    )),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 1,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 2),
-            child: Text(
-              movieDetails["Title"],
-              style: theme.textTheme.labelSmall,
-              overflow: TextOverflow.ellipsis,
+            const SizedBox(
+              height: 1,
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 2),
+              child: Text(
+                movieDetails["Title"],
+                style: theme.textTheme.labelSmall,
+                overflow: TextOverflow.ellipsis,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

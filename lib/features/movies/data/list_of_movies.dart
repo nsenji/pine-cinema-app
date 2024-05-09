@@ -1423,3 +1423,11 @@ List moviesInCinema = [
     "cast": ["Iko Uwais", "Lewis Tan", "Jessica Henwick", "Wu Jing", "Nancy Wu"]
   },
 ];
+
+List nullCast = [
+  "N/A",
+  "N/A",
+  "N/A",
+  "N/A",
+  "N/A",
+];

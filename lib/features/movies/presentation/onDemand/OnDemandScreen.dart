@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/filter_chip.dart';
 import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/common_widgets/search_widget.dart';
-import 'package:pine/movieData/list_of_movies.dart';
+import 'package:pine/features/movies/data/list_of_movies.dart';
 
 class OnDemand extends StatefulWidget {
   const OnDemand({super.key});
@@ -111,9 +111,7 @@ class _OnDemandState extends State<OnDemand> {
                 itemBuilder: (context, index) {
                   return MovieCard1(movieDetails: movies[index]);
                 },
-                // children: images.map((image) {
-                //   return MovieCard1(image: 'assets/images/$image');
-                // }).toList(),
+                
               ),
             ),
           )
