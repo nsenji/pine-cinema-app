@@ -4,6 +4,7 @@ import 'package:pine/common_widgets/filter_chip.dart';
 import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/common_widgets/search_widget.dart';
 import 'package:pine/features/movies/controllers/most_popular_state.dart';
+import 'package:pine/features/movies/data/list_of_movies.dart';
 
 class OnDemand extends ConsumerStatefulWidget {
   const OnDemand({super.key});
@@ -13,6 +14,21 @@ class OnDemand extends ConsumerStatefulWidget {
 }
 
 class _OnDemandState extends ConsumerState<OnDemand> {
+  void _getSearchResultList(
+      String value,
+      StateOfMostPopularMoviesController stateOfMostPopularMoviesController,
+      List currentMovieState) {
+    List searchResultList = currentMovieState
+        .where((element) => element["Title"]
+            .toString()
+            .toLowerCase()
+            .contains(value.toLowerCase()))
+        .toList();
+
+    stateOfMostPopularMoviesController
+        .setMovieList(searchResultList as List<Map>);
+  }
+
   final TextEditingController _searchContoller = TextEditingController();
 
   List<String> categories = [
@@ -31,6 +47,7 @@ class _OnDemandState extends ConsumerState<OnDemand> {
   @override
   Widget build(BuildContext context) {
     List<Map> popularMoviesState = ref.watch(stateOfMoviesProvider);
+    var popularMoviesController = ref.read(stateOfMoviesProvider.notifier);
     var theme = Theme.of(context);
     return Scaffold(
       body: Column(
@@ -43,12 +60,15 @@ class _OnDemandState extends ConsumerState<OnDemand> {
                 cancelText: () {
                   setState(() {
                     _searchContoller.clear();
+                    popularMoviesController.setMovieList(movies);
                   });
                 },
                 suffixVisible: _searchContoller.text.isNotEmpty,
                 controller: _searchContoller,
                 label: "Search for movie",
-                onChanged: (value) {}),
+                onChanged: (value) {
+                  _getSearchResultList(value, popularMoviesController, movies);
+                }),
           ),
           const SizedBox(
             height: 7,
