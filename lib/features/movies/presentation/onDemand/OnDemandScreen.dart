@@ -1,40 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/common_widgets/filter_chip.dart';
 import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/common_widgets/search_widget.dart';
-import 'package:pine/features/movies/data/list_of_movies.dart';
+import 'package:pine/features/movies/controllers/most_popular_state.dart';
 
-class OnDemand extends StatefulWidget {
+class OnDemand extends ConsumerStatefulWidget {
   const OnDemand({super.key});
 
   @override
-  State<OnDemand> createState() => _OnDemandState();
+  ConsumerState<OnDemand> createState() => _OnDemandState();
 }
 
-class _OnDemandState extends State<OnDemand> {
+class _OnDemandState extends ConsumerState<OnDemand> {
   final TextEditingController _searchContoller = TextEditingController();
-
-  List<String> images = [
-    'acacia.jpg',
-    'arena_place.jpg',
-    'avatar_clip.jpg',
-    'beast_clip.jpg',
-    'black_adam.jpg',
-    'bullet_train_clip.jpg',
-    'cyber.jpg',
-    'groot.jpg',
-    'ham.jpg',
-    'john_wick.jpg',
-    'korea.jpg',
-    'metroplex.jpg',
-    'nope_clip.jpg',
-    'nsenji.png',
-    'thanos.jpg',
-    'the_woman_king.jpg',
-    'transformers.jpg',
-    'travis.jpg',
-    'wakanda.png'
-  ];
 
   List<String> categories = [
     'All',
@@ -51,6 +30,7 @@ class _OnDemandState extends State<OnDemand> {
   ];
   @override
   Widget build(BuildContext context) {
+    List<Map> popularMoviesState = ref.watch(stateOfMoviesProvider);
     var theme = Theme.of(context);
     return Scaffold(
       body: Column(
@@ -102,16 +82,15 @@ class _OnDemandState extends State<OnDemand> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(
-                itemCount: movies.length,
+                itemCount: popularMoviesState.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 14,
                     childAspectRatio: (150 / 220)),
                 itemBuilder: (context, index) {
-                  return MovieCard1(movieDetails: movies[index]);
+                  return MovieCard1(movieDetails: popularMoviesState[index]);
                 },
-                
               ),
             ),
           )

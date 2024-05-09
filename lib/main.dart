@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pine/features/cinema/presentation/MovieDetails.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/features/navBar/nav_bar.dart';
 import 'package:pine/utils/custom_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -17,7 +17,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.4
   intl: ^0.18.1
-
+  flutter_riverpod: ^2.4.9
 
 
 dev_dependencies:

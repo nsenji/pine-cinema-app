@@ -1,4 +1,4 @@
-List movies = [
+List<Map> movies = [
   {
     "Release_Date": "15/12/2021",
     "Title": "Spider-Man: No Way Home",

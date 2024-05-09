@@ -25,6 +25,7 @@ class Avatar extends StatelessWidget {
         child: CircleAvatar(
           radius: radius,
           backgroundColor: Colors.black12,
+          // ignore: unnecessary_null_comparison
           backgroundImage: photoUrl != null ? NetworkImage(photoUrl) : null,
           child: photoUrl.isEmpty
               ? Icon(
@@ -46,6 +47,7 @@ class Avatar extends StatelessWidget {
         width: borderWidth,
       ),
     );
+    // ignore: dead_code
     return null;
   }
 }
