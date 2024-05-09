@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/features/cinema/presentation/cinemaMovieDetails.dart';
-
+import 'package:pine/movieData/list_of_movies.dart';
 
 class MoviesShowing extends StatefulWidget {
   final showDate;
@@ -73,25 +73,16 @@ class _MoviesShowingState extends State<MoviesShowing> {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: GridView(
+              child: GridView.builder(
+                itemCount: moviesInCinema.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 14,
                     childAspectRatio: (150 / 220)),
-                children: [
-                  ...images.map((image) {
-                    return InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const InCinemaDetailsShowing()));
-                        },
-                        child: MovieCard1(image: 'assets/images/$image'));
-                  }).toList()
-                ],
+                itemBuilder: (context, index) {
+                  return MovieCard1(movieDetails: moviesInCinema[index]);
+                },
               ),
             ),
           )
