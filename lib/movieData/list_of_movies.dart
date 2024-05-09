@@ -57,7 +57,7 @@ List movies = [
   {
     "Release_Date": "07/01/2022",
     "Title": "The Commando",
-    "Overview": "An elite DEA agent returns home after a failed mission when his family makes an unexpected discovery in their house – a stash of money worth $3 million. They soon face the danger and threat of a newly released criminal and his crew, who will do whatever it takes to retrieve the money, including kidnap the agent’s daughters. Stakes are high and lives are at risk in this head-to-head battle as the agent stops at nothing to protect his family against the money-hungry criminals.",
+    "Overview": "An elite DEA agent returns home after a failed mission when his family makes an unexpected discovery in their house – a stash of money worth \$3 million. They soon face the danger and threat of a newly released criminal and his crew, who will do whatever it takes to retrieve the money, including kidnap the agent’s daughters. Stakes are high and lives are at risk in this head-to-head battle as the agent stops at nothing to protect his family against the money-hungry criminals.",
     "Vote_Average": 6.6,
     "Genre": "Action, Crime, Thriller",
     "Poster_Url": "https://image.tmdb.org/t/p/original/pSh8MyYu5CmfyWEHzv8FEARH2zq.jpg",
@@ -1031,4 +1031,4 @@ List movies = [
   
  
   
-]
+];
