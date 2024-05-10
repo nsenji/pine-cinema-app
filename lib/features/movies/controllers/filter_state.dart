@@ -40,9 +40,7 @@ class FilterStateController extends StateNotifier<List<Map>> {
     state = newList;
     if(state.isEmpty){
     mostPopularStateNotifier.setMovieList(movies);
-
     }else{
-
     mostPopularStateNotifier.setMovieList(state);
     }
   }

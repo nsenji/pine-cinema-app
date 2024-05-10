@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/common_widgets/filter_chip.dart';
 import 'package:pine/common_widgets/get_genre_from_list.dart';
-import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
 import 'package:pine/common_widgets/search_widget.dart';
 import 'package:pine/features/movies/controllers/filter_state.dart';
 import 'package:pine/features/movies/controllers/most_popular_state.dart';
 import 'package:pine/features/movies/data/list_of_movies.dart';
+import 'package:pine/features/movies/presentation/movie_card_main.dart';
 
 class OnDemand extends ConsumerStatefulWidget {
   const OnDemand({super.key});
@@ -131,9 +131,9 @@ class _OnDemandState extends ConsumerState<OnDemand> {
                     crossAxisCount: 3,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 14,
-                    childAspectRatio: (150 / 220)),
+                    childAspectRatio: (130 / 220)),
                 itemBuilder: (context, index) {
-                  return MovieCard1(movieDetails: popularMoviesState[index]);
+                  return MovieCardMain(movieDetails: popularMoviesState[index]);
                 },
               ),
             ),

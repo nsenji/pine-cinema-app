@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'package:pine/common_widgets/movieCard2_withoutLabelBelow.dart';
 import 'package:pine/common_widgets/red_button_small.dart';
 import 'package:pine/features/cinema/data/availableCinemasData.dart';
 import 'package:pine/features/cinema/presentation/movies_showing.dart';
@@ -59,7 +58,7 @@ class _TheatresState extends State<Theatres> {
                     child: IntrinsicHeight(
                       child: Row(
                         children: [
-                          MovieCard2(
+                          CinemaImage(
                             image: location['image'],
                           ),
                           const SizedBox(
@@ -162,3 +161,39 @@ class _TheatresState extends State<Theatres> {
     );
   }
 }
+
+
+
+class CinemaImage extends StatelessWidget {
+  final String image;
+  const CinemaImage({super.key, required this.image});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 2,
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: Image.network(
+            height: 150,
+            width: 120,
+            image,
+            fit: BoxFit.cover,
+            loadingBuilder: (BuildContext context, Widget child,
+                ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return Center(
+                child: LinearProgressIndicator(
+                  color: Color(0xFFEF5B6B),
+                  value: loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes!
+                      : null,
+                ),
+              );
+            },
+          )),
+    );
+  }
+}
+

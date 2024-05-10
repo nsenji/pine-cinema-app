@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
 import 'package:pine/common_widgets/get_genre_from_list.dart';
-import 'package:pine/common_widgets/movieCard2_withoutLabelBelow.dart';
-import 'package:pine/common_widgets/red_button.dart';
-import 'package:pine/common_widgets/time_chip.dart';
-import 'package:pine/features/cinema/presentation/seatArea/select_seats.dart';
+
 import 'package:pine/features/movies/data/list_of_movies.dart';
 
-class MovieDetails extends StatefulWidget {
+class MovieDetailsMain extends StatefulWidget {
   final Map movie;
-  const MovieDetails({super.key, required this.movie});
+  const MovieDetailsMain({super.key, required this.movie});
 
   @override
-  State<MovieDetails> createState() => _InCinemaDetailsShowingState();
+  State<MovieDetailsMain> createState() => _InCinemaDetailsShowingState();
 }
 
-class _InCinemaDetailsShowingState extends State<MovieDetails> {
-  List<String> images = [
-    'korea.jpg',
-    'thanos.jpg',
-    'groot.jpg',
-    'nsenji.png',
-    'cyber.jpg',
-    'travis.jpg',
-  ];
+class _InCinemaDetailsShowingState extends State<MovieDetailsMain> {
+  
   var maxlines = true;
   @override
   Widget build(BuildContext context) {
@@ -34,89 +24,6 @@ class _InCinemaDetailsShowingState extends State<MovieDetails> {
     var stackHeight = screenHeight * 0.48;
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(bottom: 10, right: 20, left: 20),
-          child: Button(
-            text: 'Book Ticket',
-            onpressed: () {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    elevation: 2,
-                    title: Text(
-                      'Please select time you want to watch',
-                      style: theme.textTheme.labelMedium!
-                          .copyWith(fontSize: 15, color: theme.disabledColor),
-                    ),
-                    content: Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          Button(
-                              text: 'Continue',
-                              onpressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const SelectSeats()));
-                              })
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-        ),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           scrolledUnderElevation: 0,
@@ -211,7 +118,7 @@ class _InCinemaDetailsShowingState extends State<MovieDetails> {
                     Positioned(
                         bottom: 0,
                         left: 20,
-                        child: MovieCard2(image: widget.movie["Poster_Url"]))
+                        child: DetailsMovieCard(image: widget.movie["Poster_Url"]))
                   ],
                 ),
               ),
@@ -407,6 +314,40 @@ class _InCinemaDetailsShowingState extends State<MovieDetails> {
           ),
         ),
       ),
+    );
+  }
+}
+
+
+class DetailsMovieCard extends StatelessWidget {
+  final String image;
+  const DetailsMovieCard({super.key, required this.image});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 2,
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: Image.network(
+            height: 150,
+            width: 120,
+            image,
+            fit: BoxFit.cover,
+            loadingBuilder: (BuildContext context, Widget child,
+                ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return Center(
+                child: LinearProgressIndicator(
+                  color: Color(0xFFEF5B6B),
+                  value: loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes!
+                      : null,
+                ),
+              );
+            },
+          )),
     );
   }
 }

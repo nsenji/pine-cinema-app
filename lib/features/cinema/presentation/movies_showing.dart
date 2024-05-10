@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pine/common_widgets/movie_card1_mainWithLabel.dart';
+import 'package:pine/features/cinema/presentation/movie_card_cinema.dart';
 import 'package:pine/features/movies/data/list_of_movies.dart';
 
 class MoviesShowing extends StatefulWidget {
@@ -78,9 +78,9 @@ class _MoviesShowingState extends State<MoviesShowing> {
                     crossAxisCount: 3,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 14,
-                    childAspectRatio: (150 / 220)),
+                    childAspectRatio: (130 / 220)),
                 itemBuilder: (context, index) {
-                  return MovieCard1(movieDetails: moviesInCinema[index]);
+                  return MovieCardCinema(movieDetails: moviesInCinema[index]);
                 },
               ),
             ),
