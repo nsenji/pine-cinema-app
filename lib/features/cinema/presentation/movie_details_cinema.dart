@@ -1,21 +1,24 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
 import 'package:pine/common_widgets/get_genre_from_list.dart';
 import 'package:pine/common_widgets/red_button.dart';
 import 'package:pine/common_widgets/time_chip.dart';
+import 'package:pine/features/cinema/controllers/selected_date_and_time_controller.dart';
 import 'package:pine/features/cinema/presentation/seatArea/select_seats.dart';
 import 'package:pine/features/movies/data/list_of_movies.dart';
 
-class MovieDetailsCinema extends StatefulWidget {
+class MovieDetailsCinema extends ConsumerStatefulWidget {
   final Map movie;
   const MovieDetailsCinema({super.key, required this.movie});
 
   @override
-  State<MovieDetailsCinema> createState() => _InCinemaDetailsShowingState();
+  ConsumerState<MovieDetailsCinema> createState() =>
+      _InCinemaDetailsShowingState();
 }
 
-class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
+class _InCinemaDetailsShowingState extends ConsumerState<MovieDetailsCinema> {
   var maxlines = true;
   @override
   Widget build(BuildContext context) {
@@ -51,36 +54,61 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
                             child: Row(
                               children: [
                                 TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
+                                  label: '10:30 am',
+                                  onpressed: (label) {
+                                    ref
+                                        .read(
+                                            selectedTimeStateProvider.notifier)
+                                        .state = label;
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 5,
                                 ),
                                 TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
+                                  label: '1:30 pm',
+                                  onpressed: (label) {
+                                    ref
+                                        .read(
+                                            selectedTimeStateProvider.notifier)
+                                        .state = label;
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 5,
                                 ),
                                 TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
+                                  label: '2:30 pm',
+                                  onpressed: (label) {
+                                    ref
+                                        .read(
+                                            selectedTimeStateProvider.notifier)
+                                        .state = label;
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 5,
                                 ),
                                 TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
+                                  label: '4:30 pm',
+                                  onpressed: (label) {
+                                    ref
+                                        .read(
+                                            selectedTimeStateProvider.notifier)
+                                        .state = label;
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 5,
                                 ),
                                 TimeChip(
-                                  label: '10:30 pm',
-                                  onpressed: () {},
+                                  label: '5:30 pm',
+                                  onpressed: (label) {
+                                    ref
+                                        .read(
+                                            selectedTimeStateProvider.notifier)
+                                        .state = label;
+                                  },
                                 ),
                                 const SizedBox(
                                   width: 5,
@@ -98,7 +126,7 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const SelectSeats()));
+                                            SelectSeats(movie: widget.movie)));
                               })
                         ],
                       ),

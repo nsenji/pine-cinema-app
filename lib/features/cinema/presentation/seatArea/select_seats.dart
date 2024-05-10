@@ -8,7 +8,8 @@ import 'package:pine/features/cinema/presentation/seatArea/seatWidget.dart';
 import 'package:pine/features/cinema/presentation/ticket_confirmation.dart';
 
 class SelectSeats extends StatefulWidget {
-  const SelectSeats({super.key});
+  final Map movie;
+  const SelectSeats({super.key, required this.movie});
 
   @override
   State<SelectSeats> createState() => _SelectSeatsState();
@@ -72,7 +73,7 @@ class _SelectSeatsState extends State<SelectSeats> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const TicketConfirmation()));
+                    builder: (context) =>  TicketConfirmation(movie: widget.movie,)));
           },
         ),
       ),
@@ -131,8 +132,10 @@ class _SelectSeatsState extends State<SelectSeats> {
                           final int seatNumber = (index + 1);
                           return SeatWidget(
                             seat: Seat(
-                              // TODO: instead of using the taken list use the stream of taken seats
-                                taken: taken.contains(seatNumber.toString())? true:false,
+                                // TODO: instead of using the taken list use the stream of taken seats
+                                taken: taken.contains(seatNumber.toString())
+                                    ? true
+                                    : false,
                                 seatNumber: seatNumber,
                                 rowLetter: getRowLetter(seatNumber)),
                           );

@@ -29,15 +29,15 @@ class MovieCardCinema extends StatelessWidget {
                   child: CachedNetworkImage(
                       imageUrl: movieDetails["Poster_Url"],
                       fit: BoxFit.cover,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) =>
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 5, right:5),
-                                  child: LinearProgressIndicator(
-                                      value: downloadProgress.progress),
-                                ),
-                              )),
+                      progressIndicatorBuilder: (context, url,
+                              downloadProgress) =>
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 5, right: 5),
+                              child: LinearProgressIndicator(
+                                  value: downloadProgress.progress),
+                            ),
+                          )),
                 ),
               ),
             ),

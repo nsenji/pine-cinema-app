@@ -13,27 +13,7 @@ class MoviesShowing extends StatefulWidget {
 }
 
 class _MoviesShowingState extends State<MoviesShowing> {
-  List<String> images = [
-    'korea.jpg',
-    'metroplex.jpg',
-    'nope_clip.jpg',
-    'acacia.jpg',
-    'arena_place.jpg',
-    'thanos.jpg',
-    'groot.jpg',
-    'ham.jpg',
-    'john_wick.jpg',
-    'the_woman_king.jpg',
-    'transformers.jpg',
-    'avatar_clip.jpg',
-    'beast_clip.jpg',
-    'nsenji.png',
-    'black_adam.jpg',
-    'bullet_train_clip.jpg',
-    'cyber.jpg',
-    'travis.jpg',
-    'wakanda.png'
-  ];
+  
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);

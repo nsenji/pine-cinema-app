@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:pine/features/cinema/data/seat_states.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pine/features/cinema/controllers/seat_selection_controller.dart';
 import 'package:pine/features/cinema/domain/seat.dart';
 import 'package:pine/utils/constants.dart';
 
-class SeatWidget extends StatefulWidget {
+class SeatWidget extends ConsumerStatefulWidget {
   final Seat seat;
 
   const SeatWidget({super.key, required this.seat});
 
   @override
-  State<SeatWidget> createState() => _SeatawidgetState();
+  ConsumerState<SeatWidget> createState() => _SeatawidgetState();
 }
 
-class _SeatawidgetState extends State<SeatWidget> {
+class _SeatawidgetState extends ConsumerState<SeatWidget> {
   Color color = Constants.seatblankColor;
 
   @override
   Widget build(BuildContext context) {
+    var seatSelectionStateNotifier = ref.read(seatSelectionProvider.notifier);
+    List seatSelectionState = ref.watch(seatSelectionProvider);
     return InkWell(
       onTap: !widget.seat.taken
           ? () {
-              if (clicked.contains(widget.seat.seatNumber.toString())) {
+              if (seatSelectionState.contains(widget.seat.seatNumber.toString())) {
                 setState(() {
                   color = Constants.seatblankColor;
-                  clicked.remove(widget.seat.seatNumber.toString());
+                  seatSelectionStateNotifier
+                      .remove(widget.seat.seatNumber);
+                  seatSelectionStateNotifier
+                      .reducePrice(widget.seat.seatNumber);
                 });
               } else {
                 setState(() {
                   color = Constants.seatSelectedColor;
-                  clicked.add(widget.seat.seatNumber.toString());
+                  seatSelectionStateNotifier
+                      .add(widget.seat.seatNumber);
+                  seatSelectionStateNotifier
+                      .addPrice(widget.seat.seatNumber);
                 });
               }
             }
@@ -39,11 +48,15 @@ class _SeatawidgetState extends State<SeatWidget> {
         decoration: BoxDecoration(
             color: widget.seat.taken ? Constants.SeatTakenColor : color,
             borderRadius: BorderRadius.circular(4)),
-        child: Center(
-            child: Text(
-          widget.seat.seatNumber.toString(),
-          style: const TextStyle(color: Colors.black),
-        )),
+        child: Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 3, top: 3),
+              child: Text(
+                widget.seat.seatNumber.toString(),
+                style: const TextStyle(color: Colors.black, fontSize: 10),
+              ),
+            )),
       ),
     );
   }

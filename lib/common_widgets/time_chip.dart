@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TimeChip extends StatefulWidget {
   final String label;
-  final VoidCallback onpressed;
+  final Function(String) onpressed;
 
   const TimeChip({super.key, required this.label, required this.onpressed});
 
@@ -27,7 +27,7 @@ class _TimeChipState extends State<TimeChip> {
         setState(() {
           isSelected = !isSelected;
         });
-        widget.onpressed;
+        widget.onpressed(widget.label);
       },
     );
   }

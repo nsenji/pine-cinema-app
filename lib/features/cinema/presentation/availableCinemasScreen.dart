@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import 'package:pine/common_widgets/red_button_small.dart';
+import 'package:pine/features/cinema/controllers/selected_date_and_time_controller.dart';
 import 'package:pine/features/cinema/data/availableCinemasData.dart';
 import 'package:pine/features/cinema/presentation/movies_showing.dart';
 
-class Theatres extends StatefulWidget {
+class Theatres extends ConsumerStatefulWidget {
   const Theatres({super.key});
 
   @override
-  State<Theatres> createState() => _TheatresState();
+  ConsumerState<Theatres> createState() => _TheatresState();
 }
 
-class _TheatresState extends State<Theatres> {
+class _TheatresState extends ConsumerState<Theatres> {
   @override
   Widget build(BuildContext context) {
     dynamic showDate;
@@ -111,6 +113,10 @@ class _TheatresState extends State<Theatres> {
 
                                     setState(() {
                                       showDate = formattedDate;
+                                      ref
+                                          .read(selectedDateStateProvider
+                                              .notifier)
+                                          .state = showDate;
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
