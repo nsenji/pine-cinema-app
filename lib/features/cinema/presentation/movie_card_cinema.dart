@@ -29,7 +29,6 @@ class MovieCardCinema extends StatelessWidget {
                   child: CachedNetworkImage(
                       imageUrl: movieDetails["Poster_Url"],
                       fit: BoxFit.cover,
-                      errorWidget: (context, url, error) => Icon(Icons.error, color: Color(0xFFEF5B6B),),
                       progressIndicatorBuilder:
                           (context, url, downloadProgress) =>
                               Center(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
 import 'package:pine/common_widgets/get_genre_from_list.dart';
@@ -52,24 +53,18 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsMain> {
                         left: 0,
                         right: 0,
                         bottom: stackHeight * 0.20,
-                        child: Image.network(
-                          widget.movie["Poster_Url"],
-                          fit: BoxFit.cover,
-                          loadingBuilder: (BuildContext context, Widget child,
-                              ImageChunkEvent? loadingProgress) {
-                            if (loadingProgress == null) return child;
-                            return Center(
-                              child: LinearProgressIndicator(
-                                color: Color(0xFFEF5B6B),
-                                value: loadingProgress.expectedTotalBytes !=
-                                        null
-                                    ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                    : null,
-                              ),
-                            );
-                          },
-                        )),
+                        child: CachedNetworkImage(
+                      imageUrl:widget.movie["Poster_Url"],
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 5, right:5),
+                                  child: LinearProgressIndicator(
+                                      value: downloadProgress.progress),
+                                ),
+                              )),),
                     Positioned(
                         bottom: 0,
                         top: (stackHeight) - stackHeight * 0.20,
@@ -329,25 +324,18 @@ class DetailsMovieCard extends StatelessWidget {
       elevation: 2,
       child: ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.network(
-            height: 150,
-            width: 120,
-            image,
-            fit: BoxFit.cover,
-            loadingBuilder: (BuildContext context, Widget child,
-                ImageChunkEvent? loadingProgress) {
-              if (loadingProgress == null) return child;
-              return Center(
-                child: LinearProgressIndicator(
-                  color: Color(0xFFEF5B6B),
-                  value: loadingProgress.expectedTotalBytes != null
-                      ? loadingProgress.cumulativeBytesLoaded /
-                          loadingProgress.expectedTotalBytes!
-                      : null,
-                ),
-              );
-            },
-          )),
+          child: CachedNetworkImage(
+                      imageUrl: image,
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) =>
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 5, right:5),
+                                  child: LinearProgressIndicator(
+                                      value: downloadProgress.progress),
+                                ),
+                              )),),
     );
   }
 }
