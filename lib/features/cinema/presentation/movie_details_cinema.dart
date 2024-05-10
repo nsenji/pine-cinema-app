@@ -16,7 +16,6 @@ class MovieDetailsCinema extends StatefulWidget {
 }
 
 class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
- 
   var maxlines = true;
   @override
   Widget build(BuildContext context) {
@@ -134,22 +133,24 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: stackHeight * 0.20,
-                        child: CachedNetworkImage(
-                      imageUrl: widget.movie["Poster_Url"],
-                      fit: BoxFit.cover,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) =>
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: stackHeight * 0.20,
+                      child: CachedNetworkImage(
+                          imageUrl: widget.movie["Poster_Url"],
+                          fit: BoxFit.cover,
+                          progressIndicatorBuilder: (context, url,
+                                  downloadProgress) =>
                               Center(
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 5, right:5),
+                                  padding:
+                                      const EdgeInsets.only(left: 5, right: 5),
                                   child: LinearProgressIndicator(
                                       value: downloadProgress.progress),
                                 ),
-                              )),),
+                              )),
+                    ),
                     Positioned(
                         bottom: 0,
                         top: (stackHeight) - stackHeight * 0.20,
@@ -198,7 +199,8 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
                     Positioned(
                         bottom: 0,
                         left: 20,
-                        child: DetailsMovieCard(image: widget.movie["Poster_Url"]))
+                        child:
+                            DetailsMovieCard(image: widget.movie["Poster_Url"]))
                   ],
                 ),
               ),
@@ -398,9 +400,6 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsCinema> {
   }
 }
 
-
-
-
 class DetailsMovieCard extends StatelessWidget {
   final String image;
   const DetailsMovieCard({super.key, required this.image});
@@ -410,19 +409,21 @@ class DetailsMovieCard extends StatelessWidget {
     return Card(
       elevation: 2,
       child: ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: CachedNetworkImage(
-                      imageUrl: image,
-                      fit: BoxFit.cover,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) =>
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 5, right:5),
-                                  child: LinearProgressIndicator(
-                                      value: downloadProgress.progress),
-                                ),
-                              )),),
+        borderRadius: BorderRadius.circular(6),
+        child: CachedNetworkImage(
+            height: 150,
+            width: 120,
+            imageUrl: image,
+            fit: BoxFit.cover,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    child: LinearProgressIndicator(
+                        value: downloadProgress.progress),
+                  ),
+                )),
+      ),
     );
   }
 }
