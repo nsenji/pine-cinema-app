@@ -25,3 +25,4 @@ class MyApp extends StatelessWidget {
 
 
 // scrolledUnderElevation: 0  [this removes the appBar color change on scroll]
+// flutter build apk --split-per-abi

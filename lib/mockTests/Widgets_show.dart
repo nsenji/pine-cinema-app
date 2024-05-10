@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
 import 'package:pine/common_widgets/pine_logo.dart';
