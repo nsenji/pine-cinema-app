@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pine/common_widgets/custom_snackbar.dart';
 import 'package:pine/features/profile/presentation/avatar.dart';
-
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -22,7 +22,6 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
           scrolledUnderElevation: 0,
           elevation: 0,
-          
           title: Text(
             'Profile',
             style: theme.textTheme.bodyLarge!.copyWith(fontSize: 22),
@@ -41,7 +40,12 @@ class _ProfileState extends State<Profile> {
                       radius: 45,
                       borderWidth: 2.0,
                       borderColor: theme.primaryColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        CustomSnackBar.show(
+                            context: context,
+                            message: "Not Available",
+                            error: true);
+                      },
                     ),
                     Container(
                         alignment: Alignment.center,
@@ -49,9 +53,9 @@ class _ProfileState extends State<Profile> {
                         height: 30,
                         width: 300,
                         child: Text(
-                          'Joshua Kimmich',
-                          style: theme.textTheme.bodyLarge!
-                                        .copyWith(fontSize: 17),
+                          'Victor Nsenji',
+                          style:
+                              theme.textTheme.bodyLarge!.copyWith(fontSize: 17),
                         )),
                   ],
                 ),
@@ -63,7 +67,12 @@ class _ProfileState extends State<Profile> {
                     child: Column(
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            CustomSnackBar.show(
+                                context: context,
+                                message: "Not Available",
+                                error: true);
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
@@ -92,7 +101,12 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            CustomSnackBar.show(
+                                context: context,
+                                message: "Not Available",
+                                error: true);
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
@@ -111,7 +125,7 @@ class _ProfileState extends State<Profile> {
                                 children: [
                                   Text('Favourites',
                                       style: theme.textTheme.bodyMedium!
-                                        .copyWith(fontSize: 16)),
+                                          .copyWith(fontSize: 16)),
                                   const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
@@ -119,13 +133,23 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => {
+                            CustomSnackBar.show(
+                                context: context,
+                                message: "Not Available",
+                                error: true)
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: theme.scaffoldBackgroundColor,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(16),
+                                  bottomRight: Radius.circular(16)),
                               border: const Border(
-                                  right: BorderSide(color: Colors.grey),
-                                  left: BorderSide(color: Colors.grey)),
+                                bottom: BorderSide(color: Colors.grey),
+                                right: BorderSide(color: Colors.grey),
+                                left: BorderSide(color: Colors.grey),
+                              ),
                             ),
                             height: 55,
                             child: Padding(
@@ -137,38 +161,7 @@ class _ProfileState extends State<Profile> {
                                 children: [
                                   Text('Go Premium',
                                       style: theme.textTheme.bodyMedium!
-                                        .copyWith(fontSize: 16)),
-                                  const Icon(Icons.arrow_forward_sharp)
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => {},
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: theme.scaffoldBackgroundColor,
-                              borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(16),
-                                  bottomRight: Radius.circular(16)),
-                              border: const Border(
-                                  bottom: BorderSide(color: Colors.grey),
-                                  right: BorderSide(color: Colors.grey),
-                                  left: BorderSide(color: Colors.grey),
-                                  top: BorderSide(color: Colors.grey)),
-                            ),
-                            height: 55,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('Payments',
-                                      style: theme.textTheme.bodyMedium!
-                                        .copyWith(fontSize: 16)),
+                                          .copyWith(fontSize: 16)),
                                   const Icon(Icons.arrow_forward_sharp)
                                 ],
                               ),
@@ -214,10 +207,18 @@ class _ProfileState extends State<Profile> {
                                     if (isSwitched == true) {
                                       setState(() {
                                         isSwitched = false;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
                                       });
                                     } else {
                                       setState(() {
                                         isSwitched = true;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
                                       });
                                     }
                                   });
@@ -236,28 +237,36 @@ class _ProfileState extends State<Profile> {
                                 const SizedBox(width: 10),
                                 Text('Push Notification',
                                     style: theme.textTheme.bodyMedium!
-                                      .copyWith(fontSize: 16)),
+                                        .copyWith(fontSize: 16)),
                               ],
                             ),
                             Transform.scale(
-                            scale: 0.7,
-                            child: Switch(
-                              value: isSwitched2,
-                              onChanged: (value) {
-                                setState(() {
-                                  if (isSwitched2 == true) {
-                                    setState(() {
-                                      isSwitched2 = false;
-                                    });
-                                  } else {
-                                    setState(() {
-                                      isSwitched2 = true;
-                                    });
-                                  }
-                                });
-                              },
-                            ),
-                          )
+                              scale: 0.7,
+                              child: Switch(
+                                value: isSwitched2,
+                                onChanged: (value) {
+                                  setState(() {
+                                    if (isSwitched2 == true) {
+                                      setState(() {
+                                        isSwitched2 = false;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
+                                      });
+                                    } else {
+                                      setState(() {
+                                        isSwitched2 = true;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
+                                      });
+                                    }
+                                  });
+                                },
+                              ),
+                            )
                           ],
                         ),
                         const SizedBox(height: 10),
@@ -270,44 +279,52 @@ class _ProfileState extends State<Profile> {
                                 const SizedBox(width: 10),
                                 Text('Email Notification',
                                     style: theme.textTheme.bodyMedium!
-                                      .copyWith(fontSize: 16)),
+                                        .copyWith(fontSize: 16)),
                               ],
                             ),
                             Transform.scale(
-                            scale: 0.7,
-                            child: Switch(
-                              value: isSwitched3,
-                              onChanged: (value) {
-                                setState(() {
-                                  if (isSwitched3 == true) {
-                                    setState(() {
-                                      isSwitched3 = false;
-                                    });
-                                  } else {
-                                    setState(() {
-                                      isSwitched3 = true;
-                                    });
-                                  }
-                                });
-                              },
-                            ),
-                          )
+                              scale: 0.7,
+                              child: Switch(
+                                value: isSwitched3,
+                                onChanged: (value) {
+                                  setState(() {
+                                    if (isSwitched3 == true) {
+                                      setState(() {
+                                        isSwitched3 = false;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
+                                      });
+                                    } else {
+                                      setState(() {
+                                        isSwitched3 = true;
+                                        CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);
+                                      });
+                                    }
+                                  });
+                                },
+                              ),
+                            )
                           ],
                         ),
                         const SizedBox(height: 20),
-                        
-                        const SizedBox(height:10),
+                        const SizedBox(height: 10),
                         InkWell(
-                          onTap: () => {},
+                          onTap: () => {CustomSnackBar.show(
+                            context: context, message: "Not Available", error: true)},
                           child: Padding(
-                            padding: const EdgeInsets.only( right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                
                                 Text('Logout',
-                                    style: theme.textTheme.bodyLarge!
-                                        .copyWith(fontSize: 17,color: theme.primaryColor)),
+                                    style: theme.textTheme.bodyLarge!.copyWith(
+                                        fontSize: 17,
+                                        color: theme.primaryColor)),
                               ],
                             ),
                           ),
