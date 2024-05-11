@@ -18,22 +18,7 @@ class _MyTicketsState extends State<MyTickets> {
           appBar: AppBar(
             elevation: 0,
             scrolledUnderElevation: 0,
-            actions: const [
-            Padding(
-              padding: EdgeInsets.only(right: 20),
-              child: Icon(
-                Icons.notifications_outlined,
-                size: 27,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 20),
-              child: Icon(
-                Icons.add_circle_outline_rounded,
-                size: 27,
-              ),
-            )
-          ],
+            
             title:  Padding(
               padding: const EdgeInsets.only(left: 5),
               child: Text("My Tickets",style: theme.textTheme.bodyLarge!.copyWith(fontSize: 22)),

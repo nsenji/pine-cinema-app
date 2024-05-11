@@ -24,22 +24,7 @@ class _TheatresState extends ConsumerState<Theatres> {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         elevation: 0,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.notifications_outlined,
-              size: 27,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.add_circle_outline_rounded,
-              size: 27,
-            ),
-          )
-        ],
+        
         title: Text(
           'Cinemas',
           style: textTheme.bodyLarge!.copyWith(fontSize: 22),

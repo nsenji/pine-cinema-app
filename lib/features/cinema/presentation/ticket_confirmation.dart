@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pine/common_widgets/red_button.dart';
 import 'package:pine/features/cinema/controllers/seat_selection_controller.dart';
-import 'package:pine/features/cinema/controllers/selected_date_and_time_controller.dart';
 
 class TicketConfirmation extends ConsumerStatefulWidget {
   final Map movie;
