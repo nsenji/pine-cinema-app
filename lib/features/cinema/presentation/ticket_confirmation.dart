@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pine/common_widgets/custom_snackbar.dart';
 import 'package:pine/common_widgets/red_button.dart';
 import 'package:pine/features/cinema/controllers/seat_selection_controller.dart';
 
@@ -18,22 +19,24 @@ class _TicketConfirmationState extends ConsumerState<TicketConfirmation> {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.black,
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: true,
         title: Text(
           'Century Cinemax',
-          style: textTheme.bodyLarge!.copyWith(fontSize: 22),
+          style: textTheme.bodyLarge!.copyWith(fontSize: 22, color: Colors.white),
         ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 10, right: 20, left: 20),
         child: Button(
-          text: 'Confirm',
+          text: 'PAY',
           onpressed: () {
-            // Navigator.push(context,
-            //     MaterialPageRoute(builder: (context) => ()));
+            CustomSnackBar.show(
+                context: context, message: "Not Available", error: true);
           },
         ),
       ),
@@ -74,7 +77,7 @@ class _TicketConfirmationState extends ConsumerState<TicketConfirmation> {
                         width: 10,
                         child: const DecoratedBox(
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(10),
                                     bottomRight: Radius.circular(10)))),
@@ -110,7 +113,7 @@ class _TicketConfirmationState extends ConsumerState<TicketConfirmation> {
                         width: 10,
                         child: const DecoratedBox(
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     bottomLeft: Radius.circular(10)))),
@@ -204,7 +207,7 @@ class _TicketConfirmationState extends ConsumerState<TicketConfirmation> {
                             width: 10,
                             child: const DecoratedBox(
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(10),
                                         bottomRight: Radius.circular(10)))),
@@ -242,7 +245,7 @@ class _TicketConfirmationState extends ConsumerState<TicketConfirmation> {
                             width: 10,
                             child: const DecoratedBox(
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10),
                                         bottomLeft: Radius.circular(10)))),

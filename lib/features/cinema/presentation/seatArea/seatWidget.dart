@@ -23,7 +23,7 @@ class _SeatawidgetState extends ConsumerState<SeatWidget> {
     return InkWell(
       onTap: !widget.seat.taken
           ? () {
-              if (seatSelectionState.contains(widget.seat.seatNumber.toString())) {
+              if (seatSelectionState.contains(widget.seat.seatNumber)) {
                 setState(() {
                   color = Constants.seatblankColor;
                   seatSelectionStateNotifier

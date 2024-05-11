@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:pine/common_widgets/custom_snackbar.dart';
 
 import 'package:pine/common_widgets/red_button_small.dart';
 import 'package:pine/features/cinema/controllers/selected_date_and_time_controller.dart';
@@ -24,7 +25,6 @@ class _TheatresState extends ConsumerState<Theatres> {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         elevation: 0,
-        
         title: Text(
           'Cinemas',
           style: textTheme.bodyLarge!.copyWith(fontSize: 22),
@@ -123,9 +123,17 @@ class _TheatresState extends ConsumerState<Theatres> {
                               padding: const EdgeInsets.only(top: 8),
                               child: Align(
                                   alignment: Alignment.topRight,
-                                  child: Icon(
-                                    Icons.place,
-                                    color: theme.primaryColor,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      CustomSnackBar.show(
+                                          context: context,
+                                          message: "Not Available",
+                                          error: true);
+                                    },
+                                    child: Icon(
+                                      Icons.place,
+                                      color: theme.primaryColor,
+                                    ),
                                   )),
                             ),
                           )

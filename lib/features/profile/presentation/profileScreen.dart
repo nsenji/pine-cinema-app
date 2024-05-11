@@ -314,8 +314,12 @@ class _ProfileState extends State<Profile> {
                         const SizedBox(height: 20),
                         const SizedBox(height: 10),
                         InkWell(
-                          onTap: () => {CustomSnackBar.show(
-                            context: context, message: "Not Available", error: true)},
+                          onTap: () => {
+                            CustomSnackBar.show(
+                                context: context,
+                                message: "Not Available",
+                                error: true)
+                          },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: Row(

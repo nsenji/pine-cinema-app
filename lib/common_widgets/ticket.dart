@@ -86,7 +86,7 @@ class _TicketState extends State<Ticket> {
                           height: 5,
                         ),
                         Text(
-                          'Wed, 22-07-2023',
+                          'Wed, 22-07-2024',
                           style: theme.textTheme.bodyMedium!.copyWith(
                               fontWeight: FontWeight.w900,
                               fontSize: 16,

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pine/common_widgets/cast_and_crew_avatar.dart';
+import 'package:pine/common_widgets/custom_snackbar.dart';
 import 'package:pine/common_widgets/get_genre_from_list.dart';
 
 import 'package:pine/features/movies/data/list_of_movies.dart';
@@ -89,7 +90,10 @@ class _InCinemaDetailsShowingState extends State<MovieDetailsMain> {
                                     height: 10,
                                   ),
                                   InkWell(
-                                    onTap: () {},
+                                    onTap: () {CustomSnackBar.show(
+                                            context: context,
+                                            message: "Not Available",
+                                            error: true);},
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
