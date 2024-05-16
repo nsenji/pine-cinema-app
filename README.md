@@ -27,3 +27,9 @@ Select Seat(s) | Ticket Summary | Paid Tickets |
 ![](./app_ui_images/select_seats.jpg) | ![](./app_ui_images/ticket_summary.jpg) | ![](./app_ui_images/my_tickets.jpg)
 Horror Filter | Batman Search | User Profile |
 ![](./app_ui_images/horror_filter.jpg) | ![](./app_ui_images/batman_search.jpg) | ![](./app_ui_images/profile.jpg)
+
+
+## 🚀 Technologies
+- Flutter 3.19.3
+- Dart 3.3.1
+- IMDB movie Database
