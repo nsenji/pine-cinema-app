@@ -1,16 +1,19 @@
-# pine
+# Pine Cinema App - Made with Flutter
 
-A new Flutter project.
+![Static Badge](https://img.shields.io/badge/Made%20with%20-%20Flutter%20-blue?style=for-the-badge)
 
-## Getting Started
+A mobile application to view popular movie releases, book seats and pay for cinema tickets to watch selected movies in one of the cinemas around Kampala
 
-This project is a starting point for a Flutter application.
+## :sparkles: App Features
 
-A few resources to get you started if this is your first Flutter project:
+- Search and filter movies by genre
+- View movie Details plus the trailer
+- View avaible cinemas around Kampala
+- Choose date and time to see movies showing that day
+- Select seats from seats screen
+- view summary of tickets
+- process payment
+- view purchased tickets
+- account management
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## :iphone: Screens
