@@ -33,3 +33,4 @@ Horror Filter | Batman Search | User Profile |
 - Flutter 3.19.3
 - Dart 3.3.1
 - IMDB movie Database
+- Firebase
